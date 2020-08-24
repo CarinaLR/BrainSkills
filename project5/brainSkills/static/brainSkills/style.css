@@ -1,0 +1,30 @@
+/* tags */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", arial, sans-serif;
+  margin: 10;
+  height: 100vh;
+  width: 100vw;
+  color: grey;
+  background: turquoise;
+}
+
+textarea {
+  min-height: 100px;
+  min-width: 1000px;
+  border-radius: 12px;
+}
+
+h3 {
+  margin: 0.5em 0;
+}
+
+img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: center;
+}
