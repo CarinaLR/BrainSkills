@@ -22,9 +22,23 @@ h3 {
   margin: 0.5em 0;
 }
 
-img {
+/* id */
+
+#logo_1 {
+  height: 35vh;
+  width: 22vw;
+  padding: 25px;
+  margin-left: 525px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: center;
+  overflow-x: auto;
+  text-align: center;
+}
+
+/* class */
+
+.to_lef {
+  display: flex;
+  align-items: flex-end;
+  margin-left: 700px;
 }

@@ -35,6 +35,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contacts</a>
                     </li>
+                    <div class="to_lef">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Log Out</a>
                     </li>
@@ -45,11 +46,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Register</a>
                     </li>
-
+                    </div>
               </ul>
             </div>
           </nav>
-
+        <div class="ui container-fluid" id="logo">
+        <img src="{% static 'brainSkills/logo_1.png' %}" id="logo_1">
+        </div>
         <div class="body">
             {% block body %}
             {% endblock %}
