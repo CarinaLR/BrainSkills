@@ -1,7 +1,11 @@
+from dotenv import load_dotenv
+
 from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
+
+load_dotenv()
 
 
 def index(request):
