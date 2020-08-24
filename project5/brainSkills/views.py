@@ -9,7 +9,7 @@ load_dotenv()
 
 
 def index(request):
-    return render(request, "brainSkills/layout.html")
+    return render(request, "brainSkills/index.html")
 
 
 def carina(request):
