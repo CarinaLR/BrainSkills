@@ -2,10 +2,15 @@
 {% load static %}
 
 {% block body %}
+  <div id="back_img" style="background-image: url({% static 'brainSkills/jeshoots-com.jpg' %})">
+    <div class="ui container-fluid" id="logo">
+        <img src="{% static 'brainSkills/logo_1.png' %}" id="logo_1">
+    </div>
    <h1 class="title_page">BrainSkills</h1>
    <div class="text_container">
    <p class="text_page">The aim of BrainSkills is to help the student to get confident speaking in English helping them to reach their goals. Implementing many techniques of conversation, writing, and grammar. Each of which will hold an hour class, where the student will focus on their deficit by previous evaluation.</p>
    </div>
+  </div>
 {% endblock %}
 {% block script %}
 <script src="{% static 'brainSkills/main.js' %}"></script>

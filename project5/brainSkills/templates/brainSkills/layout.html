@@ -50,11 +50,11 @@
               </ul>
             </div>
           </nav>
-        <div class="ui container-fluid" id="logo">
-        <img src="{% static 'brainSkills/logo_1.png' %}" id="logo_1">
-        </div>
         <div class="body">
             {% block body %}
+            <div class="ui container-fluid" id="logo">
+                <img src="{% static 'brainSkills/logo_1.png' %}" id="logo_1">
+            </div>
             {% endblock %}
         </div>
     </body>
