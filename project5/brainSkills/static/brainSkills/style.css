@@ -191,7 +191,7 @@ h3 {
 
 .text_wrapper {
   height: 560px;
-  display: table;
+  display: block;
   width: 100%;
   text-align: center;
   margin: 0;
