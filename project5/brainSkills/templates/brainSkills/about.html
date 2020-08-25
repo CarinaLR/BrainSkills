@@ -1,0 +1,22 @@
+{% extends "brainSkills/layout.html" %}
+{% load static %}
+
+{% block body %}
+  <div class="body_blank container-fuid row">
+    <div class="col-lg-6" id="logo_left">
+        {% comment %} <img src="{% static 'brainSkills/logo_1.png' %}" id="logo_2"> {% endcomment %}
+        <h1 class="titleAbout_page">LEFT</h1>
+    </div>
+    <div class="col-lg-6" id="dec_right">
+    <div class="text_wrapper">
+    </div>
+      <h1 class="titleAbout_page">About our company</h1>
+      <div class="text_container">
+        <p class="textAbout_page">The aim of BrainSkills is to help the student to get confident speaking in English helping them to reach their goals. Implementing many techniques of conversation, writing, and grammar. Each of which will hold an hour class, where the student will focus on their deficit by previous evaluation.</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+{% block script %}
+<script src="{% static 'brainSkills/main.js' %}"></script>
+{% endblock %}

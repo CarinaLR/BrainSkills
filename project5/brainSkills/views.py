@@ -12,8 +12,8 @@ def index(request):
     return render(request, "brainSkills/index.html")
 
 
-def carina(request):
-    return HttpResponse("Hello, Carina!")
+def about(request):
+    return render(request, "brainSkills/about.html")
 
 
 def greet(request, name):
