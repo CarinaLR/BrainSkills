@@ -346,6 +346,16 @@ h3 {
   border-color: black;
 }
 
+.logo_c {
+  height: 17vh;
+  width: 10vw;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  text-align: center;
+}
+
 .img_service {
   width: 650px;
   height: 650px;
