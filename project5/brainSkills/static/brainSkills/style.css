@@ -307,6 +307,11 @@ h3 {
   border-color: black;
 }
 
+.img_service {
+  width: 650px;
+  height: 650px;
+}
+
 /* media queries */
 
 /* Small devices (landscape phones, 576px and up) */
