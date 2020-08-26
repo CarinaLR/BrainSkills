@@ -1,0 +1,33 @@
+{% extends "brainSkills/layout.html" %}
+{% load static %}
+
+{% block body %}
+<div class="row">
+  <div class="col-6 col-md-4" style="background-color: #ededed"></div>
+  <div class="col-12 col-sm-6 col-md-8" style="background-color: #ededed">
+    <div class="container align-self-center" id="dec_center" style="background-color: #ededed">
+        <div id="text_wrapper_top">
+          <h1 class="titleAbout_page">We would like to know you</h1>
+          <hr id ="separate_line_s">
+          <div class="textAbout_page_la">
+          The future is now! Register and contact us for more information.
+Send us a message, telling us your needs and what you would like to achieve. We would love to know you and help you to reach your goals.
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="col-6 col-md-4" style="background-color: #ededed"></div>
+</div>
+<div class="row">
+  <div class="col-8 square_size" style="background-color: salmon">.col-auto .mr-auto</div>
+  <div class="col-4" style="background-color: aqua">.col-12 col-sm-6 col-md-8</div>
+</div>
+<div class="row">
+  <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+  <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+  <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+</div>
+{% endblock %}
+{% block script %}
+<script src="{% static 'brainSkills/main.js' %}"></script>
+{% endblock %}

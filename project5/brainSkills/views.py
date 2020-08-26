@@ -31,6 +31,12 @@ def services(request):
 def contact(request):
     return render(request, "brainSkills/contact.html")
 
+# block to render contact page
+
+
+def register(request):
+    return render(request, "brainSkills/register.html")
+
 # Block to render greet
 
 
