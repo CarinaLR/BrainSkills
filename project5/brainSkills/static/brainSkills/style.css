@@ -25,10 +25,9 @@ h3 {
 /* id */
 
 #logo_1 {
-  height: 35vh;
-  width: 22vw;
-  padding: 25px;
-  margin-left: 525px;
+  height: 23vh;
+  width: 15vw;
+  padding: 15px;
   display: flex;
   align-items: center;
   overflow-x: auto;
@@ -303,6 +302,36 @@ h3 {
   justify-content: center;
   width: 150px;
   height: 150px;
+  box-sizing: border-box;
+  border-color: black;
+}
+
+.square_size_up {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35vh;
+  width: 22vw;
+  box-sizing: border-box;
+  border-color: black;
+}
+
+.square_size_mid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  box-sizing: border-box;
+  border-color: black;
+}
+
+.square_size_bot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 650px;
+  height: 650px;
   box-sizing: border-box;
   border-color: black;
 }

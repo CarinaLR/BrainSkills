@@ -3,13 +3,34 @@
 
 {% block body %}
   <div id="back_img" style="background-image: url({% static 'brainSkills/jeshoots-com.jpg' %})">
-    <div class="ui container-fluid" id="logo">
-        <img src="{% static 'brainSkills/logo_1.png' %}" id="logo_1">
+    <div class="row">
+      <div class="col-6 col-md-4 square_size_up"></div>
+      <div class="col-6 col-md-4 square_size_up">
+    <img src="{% static 'brainSkills/logo_1.png' %}" id="logo_1">
+  </div>
+      <div class="col-6 col-md-4 square_size_up"></div>
     </div>
-   <h1 class="title_page">BrainSkills</h1>
-   <div class="text_container">
-   <p class="text_page">The aim of BrainSkills is to help the student to get confident speaking in English helping them to reach their goals. Implementing many techniques of conversation, writing, and grammar. Each of which will hold an hour class, where the student will focus on their deficit by previous evaluation.</p>
-   </div>
+    <div class="row">
+      <div class="col-6 col-md-4 square_size_mid"></div>
+      <div class="col-6 col-md-4 square_size_mid">
+        <h1 class="title_page">BrainSkills</h1>
+      </div>
+      <div class="col-6 col-md-4 square_size_mid"></div>
+    </div>
+    <div class="row">
+      <div class="col-6 col-md-4 square_size_bot"></div>
+      <div class="col-6 col-md-4 square_size_bot">
+        <div class="container align-self-center" id="dec_center" style="background-color: transparent">
+          <div id="text_wrapper_top">
+            <hr id ="separate_line_s">
+            <div class="textAbout_page_la text_page" style="color: #fff; font-size: 24px">
+            The aim of BrainSkills is to help the student to get confident speaking in English helping them to reach their goals. Implementing many techniques of conversation, writing, and grammar. Each of which will hold an hour class, where the student will focus on their deficit by previous evaluation.
+            </div>
+          </div>
+      </div>
+      </div>
+      <div class="col-6 col-md-4 square_size_bot"></div>
+    </div>
   </div>
 {% endblock %}
 {% block script %}
