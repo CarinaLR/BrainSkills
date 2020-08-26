@@ -297,6 +297,16 @@ h3 {
   box-sizing: border-box;
 }
 
+.square_size_top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  box-sizing: border-box;
+  border-color: black;
+}
+
 .square_size {
   display: flex;
   align-items: center;
