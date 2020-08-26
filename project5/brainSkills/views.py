@@ -25,6 +25,12 @@ def about(request):
 def services(request):
     return render(request, "brainSkills/services.html")
 
+# block to render contact page
+
+
+def contact(request):
+    return render(request, "brainSkills/contact.html")
+
 # Block to render greet
 
 

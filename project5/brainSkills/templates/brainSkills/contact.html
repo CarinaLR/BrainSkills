@@ -1,0 +1,25 @@
+{% extends "brainSkills/layout.html" %}
+{% load static %}
+
+{% block body %}
+<div class="row">
+  <div class="col-6 col-md-4 square_size_mid"></div>
+  <div class="col-6 col-md-4 square_size_mid" style="background-color: #ededed"></div>
+  <div class="col-6 col-md-4 square_size_mid"></div>
+</div>
+<div class="row">
+  <div class="col-6 col-md-4 square_size_up">New York</div>
+  <div class="col-6 col-md-4 square_size_up" style="background-color: #ededed">
+    <img src="{% static 'brainSkills/logo_1.png' %}" id="logo_1">
+  </div>
+  <div class="col-6 col-md-4 square_size_up">Quito</div>
+</div>
+<div class="row">
+  <div class="col-6 col-md-4 square_size">Facebook</div>
+  <div class="col-6 col-md-4 square_size" style="background-color: #ededed">brainSkills7@gmail.com</div>
+  <div class="col-6 col-md-4 square_size">Instagram</div>
+</div>
+{% endblock %}
+{% block script %}
+<script src="{% static 'brainSkills/main.js' %}"></script>
+{% endblock %}
