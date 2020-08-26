@@ -112,12 +112,6 @@ hr {
 
 /* class */
 
-.to_lef {
-  display: flex;
-  align-items: flex-end;
-  margin-left: 700px;
-}
-
 .title_page {
   color: #fff;
   padding: 24px 0px 38px 0px;
@@ -256,4 +250,38 @@ hr {
   cursor: auto;
   box-sizing: content-box;
   box-sizing: border-box;
+}
+
+/* media queries */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .to_lef {
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .to_lef {
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .to_lef {
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+/*Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .to_lef {
+    display: flex;
+    align-items: flex-end;
+  }
 }
