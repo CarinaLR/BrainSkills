@@ -1,0 +1,34 @@
+{% extends "brainSkills/layout.html" %}
+{% load static %}
+
+{% block body %}
+<div class="row">
+  <div class="col-6 col-md-4"></div>
+  <div class="col-6 col-md-4">
+  <div class="container align-self-center" id="dec_center">
+      <div id="text_wrapper_top">
+        <h1 class="titleAbout_page">Our services</h1>
+        <hr>
+        <div class="textAbout_page_la">
+         BrainSkills offers custom online classes focusing on your weakness in the English language. Due to a previous evaluation, the instructors apply the best methodology for the student's needs.
+        </div>
+      </div>
+    </div></div>
+  <div class="col-6 col-md-4"></div>
+</div>
+  <div class="row" style="align-self: center">
+    <div class="col-6 square_size" style="background-color: lightgrey">col-6</div>
+    <div class="col-6 square_size" style="background-color: #ededed">col-6</div>
+</div>
+<div class="row" style="align-self: center">
+    <div class="col-6 square_size" style="background-color: lightgrey">col-6</div>
+    <div class="col-6 square_size" style="background-color: #ededed">col-6</div>
+</div>
+<div class="row" style="align-self: center">
+    <div class="col-6 square_size" style="background-color: lightgrey">col-6</div>
+    <div class="col-6 square_size" style="background-color: #ededed">col-6</div>
+</div>
+{% endblock %}
+{% block script %}
+<script src="{% static 'brainSkills/main.js' %}"></script>
+{% endblock %}
