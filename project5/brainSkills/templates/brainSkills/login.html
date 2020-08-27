@@ -1,0 +1,83 @@
+{% extends "brainSkills/layout.html" %} {% load static %} {% block body %}
+<div class="row">
+  <div class="col-6 col-md-4" style="background-color: #ededed"></div>
+  <div class="col-12 col-sm-6 col-md-8" style="background-color: #ededed"></div>
+  <div class="col-6 col-md-4" style="background-color: #ededed"></div>
+</div>
+<div class="row">
+  <div class="col-6 square_size" style="background-color: #ffff">
+    <div
+      class="container align-self-center"
+      id="dec_center"
+      style="background-color: #ededed"
+    >
+      <div id="text_wrapper_top">
+        <h1 class="titleAbout_page">Welcome back!</h1>
+        <hr id="separate_line_s" />
+        <div class="textAbout_page_la">
+          Please do not hesitate to contact us if you would like to receive more
+          information. We are here for you!
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6 square_size" style="background-color: #ffff">
+    <form>
+      <div class="input_group">
+        <div class="input_block">
+          <input
+            type="text"
+            name="full_name"
+            class="input_rule"
+            id="exampleInputFullName"
+            aria-describedby="emailHelp"
+            placeholder="Your Full Name"
+            style="color: #000000; border: 1px solid #8c8c8c"
+          />
+        </div>
+      </div>
+
+      <div class="input_group">
+        <div class="input_block">
+          <input
+            type="text"
+            class="input_rule"
+            id="exampleEmail"
+            aria-describedby="emailHelp"
+            placeholder="Your Email"
+            style="color: #000000; border: 1px solid #8c8c8c"
+          />
+        </div>
+      </div>
+
+      <div class="input_group">
+        <div class="input_block">
+          <input
+            type="password"
+            class="input_rule"
+            id="examplePassword"
+            aria-describedby="emailHelp"
+            placeholder="Password"
+            style="color: #000000; border: 1px solid #8c8c8c"
+          />
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-primary"
+        style="background-color: #038c5c; margin-top: 15px"
+      >
+        Login
+      </button>
+    </form>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6 col-md-4"></div>
+  <div class="col-6 col-md-4"></div>
+  <div class="col-6 col-md-4"></div>
+</div>
+{% endblock %} {% block script %}
+<script src="{% static 'brainSkills/main.js' %}"></script>
+{% endblock %}
