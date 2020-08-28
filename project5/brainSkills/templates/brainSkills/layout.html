@@ -20,11 +20,11 @@
             <a class="navbar-brand" href="{% url 'index' %}">BrainSkills</a>
             <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
               <ul class="navbar-nav mr-auto">
-
+                {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><strong>Student</strong></a>
+                        <a class="nav-link" href="{% url 'greet' user.username %}"><strong>Student: {{user.username}}</strong></a>
                     </li>
-
+                {% endif %}
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'about' %}">About us</a>
                 </li>
@@ -39,16 +39,18 @@
             </div>
             <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul class="navbar-nav ml-auto">
+                  {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Log Out</a>
+                        <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
                     </li>
-
+                  {% else %}
                      <li class="nav-item">
                          <a class="nav-link" href="{% url 'login' %}">Log In</a>
                     </li>
                      <li class="nav-item">
                          <a class="nav-link" href="{% url 'register' %}">Register</a>
                     </li>
+                  {% endif %}
                </ul>
              </div>
           </nav>

@@ -19,18 +19,20 @@
           information. We are here for you!
         </div>
       </div>
+      {% if message %}
+      <div>{{ message }}</div>
+      {% endif %}
     </div>
   </div>
   <div class="col-6 square_size" style="background-color: #ffff">
-    <form>
+    <form action="{% url 'login' %}" method="post">
+      {% csrf_token %}
       <div class="input_group">
         <div class="input_block">
           <input
             type="text"
             name="full_name"
             class="input_rule"
-            id="exampleInputFullName"
-            aria-describedby="emailHelp"
             placeholder="Your Full Name"
             style="color: #000000; border: 1px solid #8c8c8c"
           />
@@ -40,10 +42,9 @@
       <div class="input_group">
         <div class="input_block">
           <input
-            type="text"
+            type="email"
+            name="email"
             class="input_rule"
-            id="exampleEmail"
-            aria-describedby="emailHelp"
             placeholder="Your Email"
             style="color: #000000; border: 1px solid #8c8c8c"
           />
@@ -54,9 +55,8 @@
         <div class="input_block">
           <input
             type="password"
+            name="password"
             class="input_rule"
-            id="examplePassword"
-            aria-describedby="emailHelp"
             placeholder="Password"
             style="color: #000000; border: 1px solid #8c8c8c"
           />

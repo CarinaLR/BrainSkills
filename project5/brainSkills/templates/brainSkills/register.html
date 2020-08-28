@@ -16,13 +16,17 @@
           achieve. We would love to know you and help you to reach your goals.
         </div>
       </div>
+      {% if message %}
+        <div>{{ message }}</div>
+      {% endif %}
     </div>
   </div>
   <div class="col-6 col-md-4" style="background-color: #ededed"></div>
 </div>
 <div class="row">
   <div class="col-8 square_size" style="background-color: #ffff">
-    <form>
+    <form "{% url 'register' %}" method="post">
+      {% csrf_token %}
       <div class="input_group">
         <div class="input_block">
           <input
@@ -40,24 +44,9 @@
       <div class="input_group">
         <div class="input_block">
           <input
-            type="phone"
-            name="phone"
+            type="email"
+            name="email"
             class="input_rule"
-            id="exampleInputPhone"
-            aria-describedby="emailHelp"
-            placeholder="Your Phone"
-            style="color: #000000; border: 1px solid #8c8c8c"
-          />
-        </div>
-      </div>
-
-      <div class="input_group">
-        <div class="input_block">
-          <input
-            type="text"
-            class="input_rule"
-            id="exampleEmail"
-            aria-describedby="emailHelp"
             placeholder="Your Email"
             style="color: #000000; border: 1px solid #8c8c8c"
           />
@@ -68,9 +57,8 @@
         <div class="input_block">
           <input
             type="password"
+            name="password"
             class="input_rule"
-            id="examplePassword"
-            aria-describedby="emailHelp"
             placeholder="Password"
             style="color: #000000; border: 1px solid #8c8c8c"
           />
@@ -83,8 +71,6 @@
             type="password"
             name="con_pass"
             class="input_rule"
-            id="exampleConfirmPassword"
-            aria-describedby="emailHelp"
             placeholder="Confirm Password"
             style="color: #000000; border: 1px solid #8c8c8c"
           />
@@ -108,8 +94,6 @@
             type="text"
             name="mesage"
             class="input_rule"
-            id="exampleMessage"
-            aria-describedby="emailHelp"
             placeholder="Write Your Message"
             style="color: #000000; border: 1px solid #8c8c8c"
           />
