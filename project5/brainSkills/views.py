@@ -19,6 +19,12 @@ load_dotenv()
 
 
 def index(request):
+    user = request.user
+
+    if user.is_student == False and user.is_teacher == False and user.is_guest == False:
+        login(request, user)
+        return HttpResponseRedirect(reverse("status"))
+
     return render(request, "brainSkills/index.html")
 
 # Block to render about our company
@@ -39,7 +45,7 @@ def services(request):
 def contact(request):
     return render(request, "brainSkills/contact.html")
 
-# block to render contact page
+# block to render register page
 
 
 def register(request):
@@ -68,7 +74,7 @@ def register(request):
     else:
         return render(request, "brainSkills/register.html")
 
-# block to render contact page
+# block to login contact page
 
 
 def login_in(request):
@@ -91,12 +97,20 @@ def login_in(request):
     else:
         return render(request, "brainSkills/login.html")
 
-# Block to render greet
+# Block to user status
+
+
+def status(request):
+    return render(request, "brainSkills/user_type.html")
+
+# Block to log the user out
 
 
 def logout_out(request):
     logout(request)
     return HttpResponseRedirect(reverse("index"))
+
+# Block to render greet
 
 
 def greet(request, name):
