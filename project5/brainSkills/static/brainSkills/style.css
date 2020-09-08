@@ -426,6 +426,13 @@ h3 {
   box-sizing: border-box;
 }
 
+.choices {
+  background-color: papayawhip;
+  color: grey;
+  border: 1px solid #8c8c8c;
+  box-sizing: content-box;
+}
+
 /* media queries */
 
 /* Small devices (landscape phones, 576px and up) */
