@@ -116,3 +116,11 @@ def profile(request, name):
     return render(request, "brainSkills/user_type.html", {
         "username": name.capitalize()
     })
+
+
+def student_login(request):
+    return render(request, "brainSkills/user_type.html")
+
+
+def teacher_login(request):
+    return render(request, "brainSkills/user_type.html")
