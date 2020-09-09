@@ -119,8 +119,9 @@ def profile(request, name):
 
 
 def student_login(request):
-    return render(request, "brainSkills/user_type.html")
+
+    return render(request, "brainSkills/student_login.html")
 
 
 def teacher_login(request):
-    return render(request, "brainSkills/user_type.html")
+    return render(request, "brainSkills/teacher_login.html")
