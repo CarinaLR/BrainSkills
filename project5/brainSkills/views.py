@@ -93,17 +93,6 @@ def login_in(request):
     else:
         return render(request, "brainSkills/login.html")
 
-# Block to user status
-
-
-def status(request):
-    return render(request, "brainSkills/user_type.html")
-
-# Block to change user status
-
-
-def change_status(request):
-    return render(request, "brainSkills/index.html")
 
 # Block to log the user out
 
@@ -116,14 +105,14 @@ def logout_out(request):
 
 
 def profile(request, name):
-    user = request.user
+    # user = request.user
 
-    if user == name:
+    # if user == name:
 
-        if user.is_student == False and user.is_teacher == False and user.is_guest == False:
-            login(request, user)
+    #     if user.is_student == False and user.is_teacher == False and user.is_guest == False:
+    #         login(request, user)
 
-            return HttpResponseRedirect(reverse("status"))
+    #         return HttpResponseRedirect(reverse("status"))
     return render(request, "brainSkills/user_type.html", {
         "username": name.capitalize()
     })
