@@ -12,7 +12,34 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function change_user_status(status) {
+  console.log("reach change_user_status");
   //Change status according to the select button.
   if (status === student) {
+    console.log("STUDENT");
+    //Load user info
+    fetch("status/student")
+      .then((response) => response.json())
+      .then((users) => {
+        console.log("student - ", users);
+      });
   }
+  if (status === teacher) {
+    console.log("TEACHER");
+    //Load user info
+    fetch("status/teacher")
+      .then((response) => response.json())
+      .then((users) => {
+        console.log("teacher - ", users);
+      });
+  }
+  if (status === guest) {
+    console.log("GUEST");
+    //Load user info
+    fetch("status/guest")
+      .then((response) => response.json())
+      .then((users) => {
+        console.log("guest - ", users);
+      });
+  }
+  return false;
 }

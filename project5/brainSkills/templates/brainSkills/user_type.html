@@ -27,34 +27,22 @@
     </div>
   </div>
   <div class="col-6 square_size" style="background-color: #ffff">
-    <form action="{% url 'login' %}" method="post">
+    <form>
       {% csrf_token %}
       <div class="input_group">
         <div class="input_block">
           <p class="lead">
             Select below the type of account you want to create
           </p>
-          <a
-            href="{% url 'student_login'%}"
-            class="choices btn-lg"
-            role="button"
-            id="student"
-            >* Student</a
-          >
-          <a
-            href="{% url 'teacher_login'%}"
-            class="choices btn-lg"
-            role="button"
-            id="teacher"
-            >* Teacher</a
-          >
-          <a
-            href="{% url 'index'%}"
-            class="choices btn-lg"
-            role="button"
-            id="guest"
-            >* Guest</a
-          >
+          <button name="student" class="choices btn-lg" id="student">
+            * Student
+          </button>
+          <button name="teacher" class="choices btn-lg" id="teacher">
+            * Teacher
+          </button>
+          <button name="guest" class="choices btn-lg" id="guest">
+            * Guest
+          </button>
         </div>
       </div>
     </form>

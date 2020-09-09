@@ -2,9 +2,9 @@ import json
 from django.contrib.auth import authenticate, login, logout
 from django.db import IntegrityError
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
+from django.http import JsonResponse
 from django.core import serializers
-from django.shortcuts import render, redirect
+from django.shortcuts import HttpResponse, HttpResponseRedirect, render, redirect
 from django.urls import reverse
 from dotenv import load_dotenv
 
@@ -105,17 +105,37 @@ def logout_out(request):
 
 
 def profile(request, name):
-    # user = request.user
+    username = request.user
 
-    # if user == name:
+    if username.is_student == False and username.is_teacher == False and username.is_guest == False:
+        return render(request, "brainSkills/user_type.html")
+    if username.is_student == True and username.is_teacher == False and username.is_guest == False:
+        return render(request, "brainSkills/student_login.html")
+    if username.is_student == False and username.is_teacher == True and username.is_guest == False:
+        return render(request, "brainSkills/teacher_login.html")
+    if username.is_student == False and username.is_teacher == False and username.is_guest == True:
+        return render(request, "brainSkills/services.html")
 
-    #     if user.is_student == False and user.is_teacher == False and user.is_guest == False:
-    #         login(request, user)
-
-    #         return HttpResponseRedirect(reverse("status"))
-    return render(request, "brainSkills/user_type.html", {
+    return render(request, "brainSkills/student_login.html", {
         "username": name.capitalize()
     })
+
+
+@login_required
+def status(request, status):
+    print("reach Status view")
+    queryset = User.objects.all()
+    username = request.user
+
+    if request.method == "GET":
+        user_id = username.id
+        user_is_student = username.is_student
+        user_is_teacher = username.is_teacher
+        user_is_guest = username.is_guest
+        response = {"username": username, "user_id": user_id, "user_is_student": user_is_student,
+                    "user_is_teacher": user_is_teacher, "user_is_guest": user_is_guest}
+
+    return JsonResponse(response, safe=False)
 
 
 def student_login(request):

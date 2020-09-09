@@ -27,10 +27,12 @@
     </div>
   </div>
   <div class="col-6 square_size" style="background-color: #ffff">
-    <form action="{% url 'login' %}" method="post">
+    <form method="post">
       {% csrf_token %}
       <div class="input_group">
-        <div class="input_block"></div>
+        <div class="input_block">
+          <h1>You are register as teacher</h1>
+        </div>
       </div>
     </form>
   </div>
