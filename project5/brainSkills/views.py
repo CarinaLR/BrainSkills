@@ -115,7 +115,7 @@ def logout_out(request):
 # Block to render greet
 
 
-def greet(request, name):
+def profile(request, name):
     user = request.user
 
     if user == name:
@@ -124,4 +124,6 @@ def greet(request, name):
             login(request, user)
 
             return HttpResponseRedirect(reverse("status"))
-    return HttpResponse(f"Hello, {name.capitalize()}!")
+    return render(request, "brainSkills/user_type.html", {
+        "username": name.capitalize()
+    })

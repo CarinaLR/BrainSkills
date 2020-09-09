@@ -12,7 +12,9 @@
       style="background-color: #ededed"
     >
       <div id="text_wrapper_top">
-        <h1 class="titleAbout_page">Welcome back!</h1>
+        {% if user.is_authenticated %}
+        <h1 class="titleAbout_page">Hello {{ user.username }}!</h1>
+        {% endif %}
         <hr id="separate_line_s" />
         <div class="textAbout_page_la">
           Please do not hesitate to contact us if you would like to receive more
