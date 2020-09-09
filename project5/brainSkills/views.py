@@ -8,7 +8,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from dotenv import load_dotenv
 
-from .models import User
+from .models import User, Service, Level, Student, Teacher, Message
 
 
 # Create your views here.
@@ -19,11 +19,6 @@ load_dotenv()
 
 
 def index(request):
-    user = request.user
-
-    if user.is_student == False and user.is_teacher == False and user.is_guest == False:
-        login(request, user)
-        return HttpResponseRedirect(reverse("status"))
 
     return render(request, "brainSkills/index.html")
 
@@ -90,6 +85,7 @@ def login_in(request):
         if user is not None:
             login(request, user)
             return HttpResponseRedirect(reverse("index"))
+
         else:
             return render(request, "brainSkills/login.html", {
                 "message": "Invalid Full Name, Email or Password."
@@ -103,6 +99,12 @@ def login_in(request):
 def status(request):
     return render(request, "brainSkills/user_type.html")
 
+# Block to change user status
+
+
+def change_status(request):
+    return render(request, "brainSkills/index.html")
+
 # Block to log the user out
 
 
@@ -114,4 +116,12 @@ def logout_out(request):
 
 
 def greet(request, name):
+    user = request.user
+
+    if user == name:
+
+        if user.is_student == False and user.is_teacher == False and user.is_guest == False:
+            login(request, user)
+
+            return HttpResponseRedirect(reverse("status"))
     return HttpResponse(f"Hello, {name.capitalize()}!")

@@ -32,9 +32,27 @@
           <p class="lead">
             Select below the type of account you want to create
           </p>
-          <a href="#" class="choices btn-lg" role="button">* Student</a>
-          <a href="#" class="choices btn-lg" role="button">* Teacher</a>
-          <a href="#" class="choices btn-lg" role="button">* Guest</a>
+          <a
+            href="{% url 'change_status' %}"
+            class="choices btn-lg"
+            role="button"
+            id="student"
+            >* Student</a
+          >
+          <a
+            href="{% url 'change_status' %}"
+            class="choices btn-lg"
+            role="button"
+            id="teacher"
+            >* Teacher</a
+          >
+          <a
+            href="{% url 'change_status' %}"
+            class="choices btn-lg"
+            role="button"
+            id="guest"
+            >* Guest</a
+          >
         </div>
       </div>
     </form>
