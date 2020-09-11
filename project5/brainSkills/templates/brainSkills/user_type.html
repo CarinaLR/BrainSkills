@@ -34,12 +34,24 @@
           <p class="lead">
             Select below the type of account you want to create
           </p>
-          <button name="student" class="choices btn-lg" id="student">
+          <a
+            href="{% url 'student_login' %}"
+            name="student"
+            class="choices btn-lg"
+            role="button"
+            id="student"
+          >
             * Student
-          </button>
-          <button name="teacher" class="choices btn-lg" id="teacher">
+          </a>
+          <a
+            href="{% url 'teacher_login' %}"
+            name="teacher"
+            class="choices btn-lg"
+            role="button"
+            id="teacher"
+          >
             * Teacher
-          </button>
+          </a>
           <a
             href="{% url 'register' %}"
             name="guest"
