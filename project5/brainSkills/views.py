@@ -43,6 +43,10 @@ def contact(request):
 # block to render register page
 
 
+def accounts(request):
+    return render(request, "brainSkills/user_type.html")
+
+
 def register(request):
     if request.method == "POST":
         username = request.POST["full_name"]

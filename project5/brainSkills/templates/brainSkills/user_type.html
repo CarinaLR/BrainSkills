@@ -40,9 +40,15 @@
           <button name="teacher" class="choices btn-lg" id="teacher">
             * Teacher
           </button>
-          <button name="guest" class="choices btn-lg" id="guest">
+          <a
+            href="{% url 'register' %}"
+            name="guest"
+            class="choices btn-lg"
+            role="button"
+            id="guest"
+          >
             * Guest
-          </button>
+          </a>
         </div>
       </div>
     </form>
