@@ -191,4 +191,33 @@ def student_login(request):
 
 
 def teacher_login(request):
-    return render(request, "brainSkills/teacher_login.html")
+    if request.method == "POST":
+        # Get all information from user_type student
+        username = request.POST["full_name"]
+        email = request.POST["email"]
+
+        # Confirmation password
+        password = request.POST["password"]
+        confirmation = request.POST["con_pass"]
+        if password != confirmation:
+            return render(request, "brainSkills/register.html", {
+                "message": "Password must match."
+            })
+
+        # Create User update is_teacher to True
+        try:
+            user = User.objects.create_user(username, email, password)
+            user.is_teacher = True
+            user.save()
+        # Create Teacher with user information
+            teacher = Teacher.objects.create(user=user)
+            print("TEACHER - ", teacher)
+
+        except IntegrityError:
+            return render(request, "brainSkills/register.html", {
+                "message": "Username already taken."
+            })
+        login(request, user)
+        return HttpResponseRedirect(reverse("login"))
+    else:
+        return render(request, "brainSkills/teacher_login.html")
