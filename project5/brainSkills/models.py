@@ -32,10 +32,10 @@ class Level(models.Model):
 class Student(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, primary_key=True)
-    service = models.ForeignKey(
-        Service, on_delete=models.CASCADE, related_name="service")
-    level = models.ForeignKey(
-        Level, on_delete=models.CASCADE, related_name="level")
+    service = models.ManyToManyField(
+        Service, related_name="service")
+    level = models.ManyToManyField(
+        Level, related_name="level")
     progress = models.IntegerField()
 
     def __str__(self):
