@@ -14,11 +14,17 @@
       <div id="text_wrapper_top">
         {% if user.is_authenticated %}
         <h1 class="titleAbout_page">Hello {{ user.username }}!</h1>
+        {% else %}
+        <h1 clas="titleAbout_page">Fill out the following form</h1>
         {% endif %}
         <hr id="separate_line_s" />
         <div class="textAbout_page_la">
           Please do not hesitate to contact us if you would like to receive more
           information. We are here for you!
+        </div>
+
+        <div class="ui container-fluid" id="logo">
+          <img src="{% static 'brainSkills/logo_1.png' %}" id="logo_1" />
         </div>
       </div>
       {% if message %}

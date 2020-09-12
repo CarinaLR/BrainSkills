@@ -1,0 +1,47 @@
+{% extends "brainSkills/layout.html" %} {% load static %} {% block body %}
+<div class="row">
+  <div class="col-6 col-md-4" style="background-color: #ededed"></div>
+  <div class="col-12 col-sm-6 col-md-8" style="background-color: #ededed"></div>
+  <div class="col-6 col-md-4" style="background-color: #ededed"></div>
+</div>
+<div class="row">
+  <div class="col-6 square_size" style="background-color: #ffff">
+    <div
+      class="container align-self-center"
+      id="dec_center"
+      style="background-color: #ededed"
+    >
+      <div id="text_wrapper_top">
+        {% if user.is_authenticated %}
+        <h1 class="titleAbout_page">Hello {{ user.username }}!</h1>
+        {% endif %}
+        <hr id="separate_line_s" />
+        <div class="textAbout_page_la">
+          Please do not hesitate to contact us if you would like to receive more
+          information. We are here for you!
+        </div>
+      </div>
+      {% if message %}
+      <div>{{ message }}</div>
+      {% endif %}
+    </div>
+  </div>
+  <div class="col-6 square_size" style="background-color: #ffff">
+    <form method="post">
+      {% csrf_token %}
+      <div class="input_group">
+        <div class="input_block">
+          <h1>You will be register as a teacher</h1>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6 col-md-4"></div>
+  <div class="col-6 col-md-4"></div>
+  <div class="col-6 col-md-4"></div>
+</div>
+{% endblock %} {% block script %}
+<script src="{% static 'brainSkills/main.js' %}"></script>
+{% endblock %}
