@@ -111,12 +111,23 @@ def logout_out(request):
 def profile(request, name):
     username = request.user
 
+    # Base in user_type get user information to display on profile page
     if username.is_student == False and username.is_teacher == False and username.is_guest == False:
         return render(request, "brainSkills/user_type.html")
+
     if username.is_student == True and username.is_teacher == False and username.is_guest == False:
+
+        student = Student.objects.get(user=username)
+        print("STUDENT ", student)
+        service = student.service.all()
+        print("SERVICE ", service)
+        level = student.level.all()
+        print("LEVEL ", level)
         return render(request, "brainSkills/profile_student.html")
+
     if username.is_student == False and username.is_teacher == True and username.is_guest == False:
         return render(request, "brainSkills/profile_teacher.html")
+
     if username.is_student == False and username.is_teacher == False and username.is_guest == True:
         return render(request, "brainSkills/services.html")
 
