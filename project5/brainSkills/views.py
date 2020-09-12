@@ -147,6 +147,20 @@ def student_login(request):
         # Get all information from user_type student
         username = request.POST["full_name"]
         email = request.POST["email"]
+        service = request.POST["services"]
+        print("service -", service)
+        # Convert string from input into integer to pass as id filed for service
+        service_id = print(int(service))
+        # Convert string from input into integer to pass as id filed for level
+        level = request.POST["levels"]
+        print("level -", level)
+        level_id = print(int(level))
+
+        # Retrieve information from Service table and Level table
+        query_set_services = Service.objects.all()
+        print("query_service -", query_set_services)
+        query_set_levels = Service.objects.all()
+        print("query_level -", query_set_levels)
 
         # Confirmation password
         password = request.POST["password"]
@@ -156,10 +170,16 @@ def student_login(request):
                 "message": "Password must match."
             })
 
-        # Create User
+        # Create User update is_student to True
         try:
             user = User.objects.create_user(username, email, password)
+            user.is_student = True
             user.save()
+        # Create Student adding extra information
+            student = Student.objects.create(user=user)
+            print("STUDENT - ", student)
+            student.service.add(service_id)
+            student.level.add(level_id)
         except IntegrityError:
             return render(request, "brainSkills/register.html", {
                 "message": "Username already taken."

@@ -31,12 +31,11 @@ class Level(models.Model):
 
 class Student(models.Model):
     user = models.OneToOneField(
-        User, on_delete=models.CASCADE, primary_key=True)
+        User, on_delete=models.CASCADE, primary_key=True, related_name="users")
     service = models.ManyToManyField(
-        Service, related_name="service")
+        Service, related_name="services")
     level = models.ManyToManyField(
-        Level, related_name="level")
-    progress = models.IntegerField()
+        Level, related_name="levels")
 
     def __str__(self):
         return self.user.username
