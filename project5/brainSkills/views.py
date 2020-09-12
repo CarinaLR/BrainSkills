@@ -114,9 +114,9 @@ def profile(request, name):
     if username.is_student == False and username.is_teacher == False and username.is_guest == False:
         return render(request, "brainSkills/user_type.html")
     if username.is_student == True and username.is_teacher == False and username.is_guest == False:
-        return render(request, "brainSkills/student_login.html")
+        return render(request, "brainSkills/profile_student.html")
     if username.is_student == False and username.is_teacher == True and username.is_guest == False:
-        return render(request, "brainSkills/teacher_login.html")
+        return render(request, "brainSkills/profile_teacher.html")
     if username.is_student == False and username.is_teacher == False and username.is_guest == True:
         return render(request, "brainSkills/services.html")
 
