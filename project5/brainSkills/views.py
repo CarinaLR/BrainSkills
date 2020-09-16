@@ -117,12 +117,19 @@ def profile(request, name):
 
     if username.is_student == True and username.is_teacher == False and username.is_guest == False:
 
+        # Gert student by username
         student = Student.objects.get(user=username)
         print("STUDENT ", student)
+
+        # Access to service query_set and get service name
         service = student.service.all()
-        print("SERVICE ", service)
+        service_name = service[0].name
+        print("service_name ", service_name)
+
+        # Access to level query_set and get level name
         level = student.level.all()
-        print("LEVEL ", level)
+        level_name = level[0].name
+        print("level_name ", level_name)
         return render(request, "brainSkills/profile_student.html")
 
     if username.is_student == False and username.is_teacher == True and username.is_guest == False:
@@ -159,19 +166,18 @@ def student_login(request):
         username = request.POST["full_name"]
         email = request.POST["email"]
         service = request.POST["services"]
-        print("service -", service)
         # Convert string from input into integer to pass as id filed for service
-        service_id = print(int(service))
+        service_id = int(service)
         # Convert string from input into integer to pass as id filed for level
         level = request.POST["levels"]
-        print("level -", level)
-        level_id = print(int(level))
+        level_id = int(level)
 
         # Retrieve information from Service table and Level table
         query_set_services = Service.objects.all()
-        print("query_service -", query_set_services)
+        user_service = Service.objects.get(pk=service_id)
+
         query_set_levels = Service.objects.all()
-        print("query_level -", query_set_levels)
+        user_level = Service.objects.get(pk=level_id)
 
         # Confirmation password
         password = request.POST["password"]
@@ -189,8 +195,12 @@ def student_login(request):
         # Create Student adding extra information
             student = Student.objects.create(user=user)
             print("STUDENT - ", student)
+            # Add student to the service query set
             student.service.add(service_id)
+
+            # Add student to the level query set
             student.level.add(level_id)
+
         except IntegrityError:
             return render(request, "brainSkills/register.html", {
                 "message": "Username already taken."
