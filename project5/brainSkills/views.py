@@ -130,10 +130,24 @@ def profile(request, name):
         level = student.level.all()
         level_name = level[0].name
         print("level_name ", level_name)
-        return render(request, "brainSkills/profile_student.html")
+        return render(request, "brainSkills/profile_student.html", {
+            "student": student,
+            "service": service_name,
+            "level": level_name
+        })
 
     if username.is_student == False and username.is_teacher == True and username.is_guest == False:
-        return render(request, "brainSkills/profile_teacher.html")
+
+        teacher = Teacher.objects.get(user=username)
+        students = Student.objects.all()
+        print("Student_list", students)
+        for student in students:
+            print("Student_name", student.user.username)
+
+        return render(request, "brainSkills/profile_teacher.html", {
+            "teacher": teacher,
+            "students": students
+        })
 
     if username.is_student == False and username.is_teacher == False and username.is_guest == True:
         return render(request, "brainSkills/services.html")
