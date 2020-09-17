@@ -25,7 +25,17 @@
           Please do not hesitate to contact us if you would like to receive more
           information. We are here for you!
         </div>
+
+        <button
+          type="submit"
+          id="takeAction"
+          class="btn btn-primary"
+          style="background-color: #038c5c; margin-top: 15px"
+        >
+          Take Action
+        </button>
       </div>
+
       {% if message %}
       <div>{{ message }}</div>
       {% endif %}
@@ -74,6 +84,15 @@
           />
         </div>
       </div>
+
+      <button
+        type="submit"
+        id="edit_student"
+        class="btn btn-primary"
+        style="background-color: #038c5c; margin-top: 15px"
+      >
+        Save
+      </button>
     </form>
   </div>
 </div>

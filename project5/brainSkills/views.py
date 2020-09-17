@@ -4,6 +4,7 @@ from django.db import IntegrityError
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.core import serializers
+from django.core.serializers import serialize
 from django.shortcuts import HttpResponse, HttpResponseRedirect, render, redirect
 from django.urls import reverse
 from dotenv import load_dotenv
@@ -161,17 +162,35 @@ def profile(request, name):
 def status(request, status):
     print("reach Status view")
     queryset = User.objects.all()
+    print("allUsers - ", queryset)
     username = request.user
+    print("username - ", username)
 
     if request.method == "GET":
-        user_id = username.id
-        user_is_student = username.is_student
-        user_is_teacher = username.is_teacher
-        user_is_guest = username.is_guest
-        response = {"username": username, "user_id": user_id, "user_is_student": user_is_student,
-                    "user_is_teacher": user_is_teacher, "user_is_guest": user_is_guest}
+        # Query for requested user
+        user = User.objects.get(username=request.user, pk=request.user.id)
+        print("user -", user)
 
-    return JsonResponse(response, safe=False)
+        user_id = user.id
+        email = user.email
+        password = user.password
+        user_is_student = user.is_student
+        user_is_teacher = user.is_teacher
+        user_is_guest = user.is_guest
+
+        # Serialize response
+        response = {
+            "username": user.username,
+            "user_id": user_id,
+            "user_email": email,
+            "user_is_student": user.is_student,
+            "user_is_teacher": user.is_teacher,
+            "user_is_guest": user.is_guest
+        }
+        print("response -", response)
+        data = json.dumps(response)
+
+    return JsonResponse(data, safe=False)
 
 
 def student_login(request):
