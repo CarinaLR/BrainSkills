@@ -27,15 +27,6 @@
           Please do not hesitate to contact us if you would like to receive more
           information. We are here for you!
         </div>
-
-        <button
-          type="submit"
-          id="takeAction"
-          class="btn btn-primary"
-          style="background-color: #038c5c; margin-top: 15px"
-        >
-          Take Action
-        </button>
       </div>
       {% if message %}
       <div>{{ message }}</div>
@@ -48,36 +39,27 @@
 
       <div class="input_group">
         <div class="input_block">
-          <h4>Edit email address</h4>
           <input
-            type="email"
-            name="email"
+            type="text"
+            name="mesage"
             class="input_rule"
-            placeholder="Your Email"
+            placeholder="Write Your Message"
             style="color: #000000; border: 1px solid #8c8c8c"
           />
         </div>
       </div>
-
-      <div class="input_group">
-        <div class="input_block">
-          <h4>Reset password</h4>
-          <input
-            type="password"
-            name="password"
-            class="input_rule"
-            placeholder="Password"
-            style="color: #000000; border: 1px solid #8c8c8c"
-          />
-          <input
-            type="password"
-            name="con_pass"
-            class="input_rule"
-            placeholder="Confirm Password"
-            style="color: #000000; border: 1px solid #8c8c8c"
-          />
-        </div>
-      </div>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        style="
+          background-color: #038c5c;
+          margin-top: 15px;
+          align-self: center;
+          margin-left: 200px;
+        "
+      >
+        Take Action
+      </button>
 
       <div class="input_group">
         <div class="input_block">
@@ -87,15 +69,6 @@
           {% endfor %}
         </div>
       </div>
-
-      <button
-        type="submit"
-        id="edit_teacher"
-        class="btn btn-primary"
-        style="background-color: #038c5c; margin-top: 15px"
-      >
-        Save
-      </button>
     </form>
   </div>
 </div>
