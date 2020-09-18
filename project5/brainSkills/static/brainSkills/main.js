@@ -8,5 +8,15 @@ document.addEventListener("DOMContentLoaded", function () {
 function write_message(user_id) {
   userId = user_id;
   console.log("reach message - user_id", userId);
+  // Get request by id.
+  fetch(`/user_info/${userId}`)
+    .then((response) => response.json())
+    .then((response) => {
+      if (response) {
+        console.log("response ", response);
+      } else {
+        console.log("not found");
+      }
+    });
   return false;
 }

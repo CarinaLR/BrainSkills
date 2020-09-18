@@ -193,6 +193,28 @@ def status(request, status):
     return JsonResponse(data, safe=False)
 
 
+def user_info(request, user_id):
+    print("reach user_info", user_id)
+    queryset = User.objects.get(pk=user_id)
+    username = request.user
+    print("user in user", username)
+    # Return user info
+    if request.method == "GET":
+        user = user.username
+        user_id = user.id
+        print("user in user_info", user)
+
+        response = {"id": user_id,
+                    "username": user}
+        return JsonResponse(response, safe=False)
+    else:
+        return JsonResponse({
+            "error": "GET or PUT request required."
+        }, status=400)
+
+    return HttpResponseRedirect(reverse("index"))
+
+
 def student_login(request):
     if request.method == "POST":
         # Get all information from user_type student
