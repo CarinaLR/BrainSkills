@@ -195,24 +195,36 @@ def status(request, status):
 
 def user_info(request, user_id):
     print("reach user_info", user_id)
-    queryset = User.objects.get(pk=user_id)
+    current_user = User.objects.get(pk=user_id)
     username = request.user
-    print("user in user", username)
+
     # Return user info
     if request.method == "GET":
-        user = user.username
-        user_id = user.id
-        print("user in user_info", user)
+        # Query for requested user
+        user = User.objects.get(username=request.user, pk=request.user.id)
 
-        response = {"id": user_id,
-                    "username": user}
-        return JsonResponse(response, safe=False)
+        user_id = user.id
+        email = user.email
+        password = user.password
+        user_is_student = user.is_student
+        user_is_teacher = user.is_teacher
+        user_is_guest = user.is_guest
+
+        # Serialize response
+        response = {
+            "username": user.username,
+            "user_id": user_id,
+            "user_email": email,
+        }
+        print("response -", response)
+        data = json.dumps(response)
     else:
         return JsonResponse({
             "error": "GET or PUT request required."
         }, status=400)
 
-    return HttpResponseRedirect(reverse("index"))
+    return HttpResponse(status=204)
+    # return HttpResponseRedirect(reverse("index"))
 
 
 def student_login(request):
