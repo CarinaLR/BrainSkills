@@ -33,7 +33,7 @@
     </div>
   </div>
   <div class="col-6 square_size" style="background-color: #ffff">
-    <form method="post">
+    <form method="POST">
       {% csrf_token %}
       <div class="input_group">
         <div class="input_block">
@@ -57,6 +57,7 @@
       </div>
       <button
         id="w_message"
+        name="w_message"
         type="submit"
         onclick="return user_info({{ user.id }})"
         class="btn btn-primary"

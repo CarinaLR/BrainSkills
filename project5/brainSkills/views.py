@@ -8,6 +8,7 @@ from django.core.serializers import serialize
 from django.shortcuts import HttpResponse, HttpResponseRedirect, render, redirect
 from django.urls import reverse
 from dotenv import load_dotenv
+from django.views.decorators.csrf import csrf_exempt
 
 from .models import User, Service, Level, Student, Teacher, Message
 
@@ -310,3 +311,23 @@ def teacher_login(request):
         return HttpResponseRedirect(reverse("login"))
     else:
         return render(request, "brainSkills/teacher_login.html")
+
+
+@csrf_exempt
+@login_required
+def new_message(request):
+    print("reach route new_message")
+    # Get POST request to create message
+    if request.method == "POST":
+        # Get variables
+        owner = request.user
+        content = request.POST.get("message")
+        print("OWNER ", owner)
+        print("MESSAGE ", content)
+        # Save message getting information from api post request.
+        message = Message.objects.create(owner=owner.username, content=content)
+        message.save()
+        return render(request, "brainSkills/profile_student.html", {
+            "new_message": message
+        })
+    return HttpResponseRedirect(reverse("profile"))
