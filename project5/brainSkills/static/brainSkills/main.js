@@ -10,11 +10,8 @@ function write_message(user_id) {
   console.log("reach message - user_id", userId);
   // Get request by id.
   fetch(`user_info/${userId}`)
-    .then((response) => console.log("The response 1-", response))
-    // response.json())
-    .then((response) => {
-      console.log("The response 2-", response);
-    });
+    .then((response) => response.json())
+    .then((response) => console.log("The response 2-", response));
 
   //POST request to create message.
   // Get value from input to update content.

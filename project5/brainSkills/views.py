@@ -218,13 +218,15 @@ def user_info(request, user_id):
         }
         print("response -", response)
         data = json.dumps(response)
+        print("DAtA - ", data)
+        return JsonResponse(data, safe=False)
+
     else:
         return JsonResponse({
             "error": "GET or PUT request required."
         }, status=400)
 
     return HttpResponse(status=204)
-    # return HttpResponseRedirect(reverse("index"))
 
 
 def student_login(request):
