@@ -216,7 +216,6 @@ def user_info(request, user_id):
             "user_id": user_id,
             "user_email": email,
         }
-        print("response -", response)
         data = json.dumps(response)
         print("DAtA - ", data)
         return JsonResponse(data, safe=False)

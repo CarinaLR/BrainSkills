@@ -47,6 +47,7 @@
         <div class="input_block">
           <input
             type="text"
+            id="message"
             name="mesage"
             class="input_rule"
             placeholder="Write Your Message"
@@ -57,7 +58,7 @@
       <button
         id="w_message"
         type="submit"
-        onclick="return write_message({{ user.id }})"
+        onclick="return user_info({{ user.id }})"
         class="btn btn-primary"
         style="
           background-color: #038c5c;
