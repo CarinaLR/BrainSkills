@@ -218,7 +218,7 @@ def user_info(request, user_id):
             "user_email": email,
         }
         data = json.dumps(response)
-        print("DAtA - ", data)
+        print("DATA - ", data)
         return JsonResponse(data, safe=False)
 
     else:
@@ -314,20 +314,26 @@ def teacher_login(request):
 
 
 @csrf_exempt
-@login_required
 def new_message(request):
     print("reach route new_message")
+    content = request.POST.get("message")
+    print("message -", content)
+    message = request.POST.get("w_message")
     # Get POST request to create message
     if request.method == "POST":
-        # Get variables
-        owner = request.user
-        content = request.POST.get("message")
-        print("OWNER ", owner)
-        print("MESSAGE ", content)
-        # Save message getting information from api post request.
-        message = Message.objects.create(owner=owner.username, content=content)
-        message.save()
-        return render(request, "brainSkills/profile_student.html", {
-            "new_message": message
-        })
-    return HttpResponseRedirect(reverse("profile"))
+        new_content = request.POST.get("message")
+        print("message -", content)
+        if message:
+            # Get variables
+            owner = request.user
+            content = new_content
+            print("OWNER ", owner)
+            print("MESSAGE ", content)
+            # Save message getting information from api post request.
+            message = Message.objects.create(
+                owner=owner.username, content=content)
+            message.save()
+            return render(request, "brainSkills/profile_student.html", {
+                "new_message": message
+            })
+    return HttpResponse(status=204)

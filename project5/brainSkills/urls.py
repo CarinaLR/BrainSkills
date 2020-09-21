@@ -15,6 +15,6 @@ urlpatterns = [
     path("logout", views.logout_out, name="logout"),
     path("user_info/<int:user_id>", views.user_info, name="user_info"),
     path("<str:name>", views.profile, name="profile"),
+    path("new_message", views.new_message, name="new_message"),
     path("status/<str:status>", views.status, name="status"),
-    path("new_message", views.new_message, name="new_message")
 ]

@@ -33,7 +33,7 @@
     </div>
   </div>
   <div class="col-6 square_size" style="background-color: #ffff">
-    <form method="POST">
+    <form method="post">
       {% csrf_token %}
       <div class="input_group">
         <div class="input_block">
@@ -48,17 +48,18 @@
           <input
             type="text"
             id="message"
-            name="mesage"
+            name="message"
             class="input_rule"
             placeholder="Write Your Message"
             style="color: #000000; border: 1px solid #8c8c8c"
           />
         </div>
       </div>
-      <button
+      <input
         id="w_message"
         name="w_message"
         type="submit"
+        value="Take Action"
         onclick="return user_info({{ user.id }})"
         class="btn btn-primary"
         style="
@@ -67,9 +68,7 @@
           align-self: center;
           margin-left: 200px;
         "
-      >
-        Take Action
-      </button>
+      />
     </form>
   </div>
 </div>
@@ -79,5 +78,13 @@
   <div class="col-6 col-md-4"></div>
 </div>
 {% endblock %} {% block script %}
+<script
+  type="text/javascript"
+  src="http://cdnjs.cloudflare.com/ajax/libs/trianglify/0.1.2/trianglify.min.js"
+></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+  window.CSRF_TOKEN = "{{ csrf_token }}";
+</script>
 <script src="{% static 'brainSkills/main.js' %}"></script>
 {% endblock %}

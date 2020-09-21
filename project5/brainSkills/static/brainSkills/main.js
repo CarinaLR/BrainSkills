@@ -16,6 +16,47 @@ function user_info(user_id) {
   return false;
 }
 
+//Forms are at risk for Cross Site Request Forgeries (CSRF) attacks. When it comes to AJAX requests, we need to add custom header that includes the token to watch our back.
+
+$.ajaxSetup({
+  beforeSend: function (xhr, settings) {
+    function getCookie(name) {
+      var cookieValue = null;
+      if (document.cookie && document.cookie != "") {
+        var cookies = document.cookie.split(";");
+        for (var i = 0; i < cookies.length; i++) {
+          var cookie = jQuery.trim(cookies[i]);
+          // Does this cookie string begin with the name we want?
+          if (cookie.substring(0, name.length + 1) == name + "=") {
+            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+            break;
+          }
+        }
+      }
+      return cookieValue;
+    }
+    if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
+      // Only send the token to relative URLs i.e. locally.
+      xhr.setRequestHeader("X-CSRFToken", getCookie("csrftoken"));
+    }
+  },
+});
+
+// Block to get cookie with javaScript only.
+
+function getCookie(c_name) {
+  if (document.cookie.length > 0) {
+    c_start = document.cookie.indexOf(c_name + "=");
+    if (c_start != -1) {
+      c_start = c_start + c_name.length + 1;
+      c_end = document.cookie.indexOf(";", c_start);
+      if (c_end == -1) c_end = document.cookie.length;
+      return unescape(document.cookie.substring(c_start, c_end));
+    }
+  }
+  return "";
+}
+
 function writeMessage(response) {
   console.log("response writeMessage ", response);
   response = JSON.parse(response);
@@ -27,8 +68,9 @@ function writeMessage(response) {
   //POST request to create message.
   fetch(`new_message`, {
     method: "POST",
+    headers: { "X-CSRFToken": getCookie("csrftoken") },
     body: JSON.stringify({
-      content: new_message,
+      content: document.getElementById("message").value,
     }),
   })
     .then((response) => response.json())
