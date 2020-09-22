@@ -226,15 +226,13 @@ def user_info(request, user_id):
     message = request.POST.get("w_message")
     # Get POST request to create message
     if request.method == "POST":
+        # Get user instance
         user = User.objects.get(username=request.user, pk=request.user.id)
-        back_data = json.loads(request.body)
-
         # Get contents of email
+        back_data = json.loads(request.body)
         content = back_data
         print("message -", content)
 
-        in_obj = json.dumps(back_data)
-        print("in_obj -", in_obj)
         # Get variables
         owner = user
         new_content = content
