@@ -60,19 +60,25 @@ function getCookie(c_name) {
 function writeMessage(response) {
   console.log("response writeMessage ", response);
   response = JSON.parse(response);
+  let userID = response.user_id;
+  console.log("USERID ", userID);
   // Get values from input to update content and from user_info to update owner.
   let new_message = document.getElementById("message").value;
   let new_owner = response.username;
   console.log(`owner: ${new_owner} message: ${new_message}`);
 
   //POST request to create message.
-  fetch(`new_message`, {
-    method: "POST",
-    headers: { "X-CSRFToken": getCookie("csrftoken") },
-    body: JSON.stringify({
-      content: document.getElementById("message").value,
-    }),
-  })
+  fetch(
+    `user_info/${userID}`,
+    {
+      method: "POST",
+      headers: { "X-CSRFToken": getCookie("csrftoken") },
+      body: JSON.stringify({
+        content: document.getElementById("message").value,
+      }),
+    },
+    console.log("FETCH POST DONE")
+  )
     .then((response) => response.json())
     .then((result) => {
       console.log("result ->", result);

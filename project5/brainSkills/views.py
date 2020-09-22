@@ -221,6 +221,30 @@ def user_info(request, user_id):
         print("DATA - ", data)
         return JsonResponse(data, safe=False)
 
+    print("reach route new_message")
+
+    message = request.POST.get("w_message")
+    # Get POST request to create message
+    if request.method == "POST":
+        user = User.objects.get(username=request.user, pk=request.user.id)
+        back_data = json.loads(request.body)
+
+        # Get contents of email
+        content = back_data
+        print("message -", content)
+
+        in_obj = json.dumps(back_data)
+        print("in_obj -", in_obj)
+        # Get variables
+        owner = user
+        new_content = content
+        print("OWNER ", owner)
+        print("MESSAGE ", new_content)
+        # Save message getting information from api post request.
+        message = Message.objects.create(
+            owner=owner, content=new_content)
+        message.save()
+        return JsonResponse({"message": "Message sent successfully."}, status=201)
     else:
         return JsonResponse({
             "error": "GET or PUT request required."
