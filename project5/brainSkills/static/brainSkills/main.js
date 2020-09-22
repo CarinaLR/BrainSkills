@@ -73,9 +73,7 @@ function writeMessage(response) {
     {
       method: "POST",
       headers: { "X-CSRFToken": getCookie("csrftoken") },
-      body: JSON.stringify({
-        content: document.getElementById("message").value,
-      }),
+      body: JSON.stringify(document.getElementById("message").value),
     },
     console.log("FETCH POST DONE")
   )
