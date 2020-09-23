@@ -333,29 +333,3 @@ def teacher_login(request):
         return HttpResponseRedirect(reverse("login"))
     else:
         return render(request, "brainSkills/teacher_login.html")
-
-
-@csrf_exempt
-def new_message(request):
-    print("reach route new_message")
-    content = request.POST.get("message")
-    print("message -", content)
-    message = request.POST.get("w_message")
-    # Get POST request to create message
-    if request.method == "POST":
-        new_content = request.POST.get("message")
-        print("message -", content)
-        if message:
-            # Get variables
-            owner = request.user
-            content = new_content
-            print("OWNER ", owner)
-            print("MESSAGE ", content)
-            # Save message getting information from api post request.
-            message = Message.objects.create(
-                owner=owner.username, content=content)
-            message.save()
-            return render(request, "brainSkills/profile_student.html", {
-                "new_message": message
-            })
-    return HttpResponse(status=204)
