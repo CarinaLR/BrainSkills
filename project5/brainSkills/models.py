@@ -82,3 +82,13 @@ class Assign(models.Model):
         course = Course.objects.get(id=self.course_id)
         teacher = Teacher.objects.get(user=self.teacher)
         return '%s : %s' % (teacher, course)
+
+
+class Schedule(models.Model):
+    assign = models.ForeignKey(Assign, on_delete=models.CASCADE)
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+
+    def _str_(self):
+        student = Student.objects.get(user=self.stuednt)
+        schedule = Course.objects.get(id=self.course_id)
+        return '%s : %s' % (student, schedule)
