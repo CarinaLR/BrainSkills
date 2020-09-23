@@ -80,5 +80,5 @@ class Assign(models.Model):
 
     def __str__(self):
         course = Course.objects.get(id=self.course_id)
-        teacher = Teacher.objects.get(id=self.teacher_id)
-        return '%s : %s' % (teacher.username, course)
+        teacher = Teacher.objects.get(user=self.teacher)
+        return '%s : %s' % (teacher, course)
