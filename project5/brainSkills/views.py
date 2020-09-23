@@ -10,7 +10,7 @@ from django.urls import reverse
 from dotenv import load_dotenv
 from django.views.decorators.csrf import csrf_exempt
 
-from .models import User, Service, Level, Student, Teacher, Message, Class
+from .models import User, Service, Level, Student, Teacher, Message, Course
 
 
 # Create your views here.

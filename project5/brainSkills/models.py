@@ -59,7 +59,7 @@ class Message(models.Model):
         return self.content
 
 
-class Class(models.Model):
+class Course(models.Model):
     start = models.TimeField()
     end = models.TimeField()
     day = models.CharField(max_length=50, blank=True, null=True)
