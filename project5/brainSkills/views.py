@@ -132,10 +132,17 @@ def profile(request, name):
         level = student.level.all()
         level_name = level[0].name
         print("level_name ", level_name)
+
+        # Access to ustudent schedule
+        user_schedule = Schedule.objects.get(student=student)
+        schedule_info = user_schedule.assign
+        print("USER_SCHEDULE", schedule_info)
+
         return render(request, "brainSkills/profile_student.html", {
             "student": student,
             "service": service_name,
-            "level": level_name
+            "level": level_name,
+            "schedule": schedule_info
         })
 
     if username.is_student == False and username.is_teacher == True and username.is_guest == False:
@@ -224,10 +231,12 @@ def user_info(request, user_id):
     print("reach route new_message")
 
     message = request.POST.get("w_message")
+
     # Get POST request to create message
     if request.method == "POST":
         # Get user instance
         user = User.objects.get(username=request.user, pk=request.user.id)
+
         # Get contents of email
         back_data = json.loads(request.body)
         content = back_data
@@ -262,6 +271,9 @@ def student_login(request):
         # Convert string from input into integer to pass as id filed for level
         level = request.POST["levels"]
         level_id = int(level)
+        # Convert string from input into integer to pass as id filed for level
+        schedule = request.POST["schedules"]
+        schedule_id = int(schedule)
 
         # Retrieve information from Service table and Level table
         query_set_services = Service.objects.all()
@@ -269,6 +281,10 @@ def student_login(request):
 
         query_set_levels = Service.objects.all()
         user_level = Service.objects.get(pk=level_id)
+
+        # Retrieve information from Assign table
+        query_set_assign = Assign.objects.all()
+        user_select = Assign.objects.get(pk=schedule_id)
 
         # Confirmation password
         password = request.POST["password"]
@@ -291,6 +307,11 @@ def student_login(request):
 
             # Add student to the level query set
             student.level.add(level_id)
+
+            # Create Schedule adding extra information
+            user_schedule = Schedule.objects.create(
+                student=student, assign=user_select)
+            user_schedule.save()
 
         except IntegrityError:
             return render(request, "brainSkills/register.html", {
