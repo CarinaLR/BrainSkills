@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import User, Service, Level, Student, Teacher, Message, Course
+from .models import User, Service, Level, Student, Teacher, Message, Course, Assign
 # Register your models here.
 
 admin.site.register(User)
@@ -10,3 +10,4 @@ admin.site.register(Student)
 admin.site.register(Teacher)
 admin.site.register(Message)
 admin.site.register(Course)
+admin.site.register(Assign)

@@ -69,3 +69,16 @@ class Course(models.Model):
         end_time = self.end.strftime("%H:%M")      # '07:50'
         return "{} ({} - {})".format(self.day, start_time, end_time)
         # 'Course 1 (07:00 - 07:50)
+
+
+class Assign(models.Model):
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
+
+    class Meta:
+        unique_together = (('course', 'teacher'))
+
+    def __str__(self):
+        course = Course.objects.get(id=self.course_id)
+        teacher = Teacher.objects.get(id=self.teacher_id)
+        return '%s : %s' % (teacher.username, course)
