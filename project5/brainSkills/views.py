@@ -160,6 +160,30 @@ def profile(request, name):
             print("Message_CONTENT", message.content)
             print("Message_TIME", message.timestamp)
 
+        # Get POST request to assign course to teacher
+            if request.method == "POST":
+                # Get user teacher instance
+                user = User.objects.get(
+                    username=request.user, pk=request.user.id)
+
+                teacher = Teacher.objects.get(user=user)
+                print("teacher", teacher)
+
+                # Convert string from input into integer to pass as id filed for course
+                course = request.POST["courses"]
+                course_id = int(course)
+
+                # Retrieve information from Assign table
+                course_set = Course.objects.all()
+
+                selected_course = course_set[course_id]
+
+                # Assign course to teacher
+                # assign = Assign.objects.create(
+                #     course=selected_course, teacher=teacher)
+                # assign.save()
+                return HttpResponse(status=204)
+
         return render(request, "brainSkills/profile_teacher.html", {
             "teacher": teacher,
             "students": students,
