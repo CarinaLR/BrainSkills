@@ -121,22 +121,18 @@ def profile(request, name):
 
         # Gert student by username
         student = Student.objects.get(user=username)
-        print("STUDENT ", student)
 
         # Access to service query_set and get service name
         service = student.service.all()
         service_name = service[0].name
-        print("service_name ", service_name)
 
         # Access to level query_set and get level name
         level = student.level.all()
         level_name = level[0].name
-        print("level_name ", level_name)
 
         # Access to ustudent schedule
         user_schedule = Schedule.objects.get(student=student)
         schedule_info = user_schedule.assign
-        print("USER_SCHEDULE", schedule_info)
 
         return render(request, "brainSkills/profile_student.html", {
             "student": student,
