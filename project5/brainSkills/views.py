@@ -153,7 +153,7 @@ def profile(request, name):
         for student in students:
             print("Student_name", student.user.username)
 
-        messages = Message.objects.all()
+        messages = Message.objects.order_by("-timestamp").all()
         print("Messages -", messages)
         for message in messages:
             print("Message_OWNER", message.owner)
