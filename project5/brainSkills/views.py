@@ -153,9 +153,17 @@ def profile(request, name):
         for student in students:
             print("Student_name", student.user.username)
 
+        messages = Message.objects.all()
+        print("Messages -", messages)
+        for message in messages:
+            print("Message_OWNER", message.owner)
+            print("Message_CONTENT", message.content)
+            print("Message_TIME", message.timestamp)
+
         return render(request, "brainSkills/profile_teacher.html", {
             "teacher": teacher,
-            "students": students
+            "students": students,
+            "messages": messages
         })
 
     if username.is_student == False and username.is_teacher == False and username.is_guest == True:
