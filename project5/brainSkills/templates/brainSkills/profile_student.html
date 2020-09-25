@@ -4,84 +4,137 @@
   <div class="col-12 col-sm-6 col-md-8" style="background-color: #ededed"></div>
   <div class="col-6 col-md-4" style="background-color: #ededed"></div>
 </div>
+
 <div class="row">
-  <div class="col-6 square_size" style="background-color: #ffff">
-    <div
-      class="container align-self-center"
-      id="dec_center"
-      style="background-color: #ededed"
-    >
-      <div id="text_wrapper_top">
-        {% if user.is_authenticated %}
-        <h1 class="titleAbout_page">Hello {{ user.username }}!</h1>
-        {% endif %}
-        <div class="input_group">
-          <div class="input_block">
-            <h2>You are register as a student</h2>
+  <div class="col-6 col-md-4"></div>
+  <div class="col-6 col-md-4"></div>
+  <div class="col-6 col-md-4"></div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6 col-md-4 square_size_top"></div>
+    <div class="col-6 col-md-4 square_size_top"></div>
+    <div class="col-6 col-md-4 square_size_top"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 square_size" style="background-color: #fff">
+      <div
+        class="container align-self-center"
+        id="dec_center"
+        style="background-color: #ededed"
+      >
+        <div id="text_wrapper_top">
+          {% if user.is_authenticated %}
+          <h1 class="titleAbout_page">Hello {{ user.username }}!</h1>
+          {% endif %}
+          <div class="input_group">
+            <div class="input_block">
+              <h2>You are register as a student</h2>
+            </div>
+          </div>
+          <hr id="separate_line_s" />
+          <div class="textAbout_page_la">
+            Please do not hesitate to contact us if you would like to receive
+            more information. We are here for you!
           </div>
         </div>
-        <hr id="separate_line_s" />
-        <div class="textAbout_page_la">
-          Please do not hesitate to contact us if you would like to receive more
-          information. We are here for you!
-        </div>
-      </div>
 
-      {% if message %}
-      <div>{{ message }}</div>
-      {% endif %}
+        {% if message %}
+        <div>{{ message }}</div>
+        {% endif %}
+      </div>
+    </div>
+
+    <div
+      class="col-md-6 col-lg-4 col-xl-3 square_size"
+      style="background-color: transparent"
+    >
+      <h2></h2>
+    </div>
+
+    <div
+      class="col-md-6 col-lg-4 col-xl-3 square_size"
+      style="background-color: #fff"
+    >
+      <form method="post">
+        {% csrf_token %}
+        <div class="input_group">
+          <div class="input_block">
+            <h4>Email: {{student.user.email}}</h4>
+            <h4>Course: {{ service }}</h4>
+            <h4>Level: {{ level }}</h4>
+            <h6>Your Instructor and Schedule</h6>
+            <h4>{{ schedule }}</h4>
+          </div>
+        </div>
+
+        <div class="input_group">
+          <div class="input_block">
+            <input
+              type="text"
+              id="message"
+              name="message"
+              class="input_rule"
+              placeholder="Write Your Message"
+              style="color: #000000; border: 1px solid #8c8c8c"
+            />
+          </div>
+        </div>
+        <input
+          id="w_message"
+          name="w_message"
+          type="submit"
+          value="Take Action"
+          onclick="return user_info({{ user.id }})"
+          class="btn btn-primary"
+          style="
+            background-color: #038c5c;
+            margin-top: 15px;
+            align-self: center;
+            margin-left: 200px;
+          "
+        />
+
+        <div class="input_group">
+          <div class="input_block"></div>
+        </div>
+      </form>
     </div>
   </div>
-  <div class="col-6 square_size" style="background-color: #ffff">
-    <form method="post">
-      {% csrf_token %}
-      <div class="input_group">
-        <div class="input_block">
-          <h4>Email: {{student.user.email}}</h4>
-          <h4>Course: {{ service }}</h4>
-          <h4>Level: {{ level }}</h4>
-          <h6>Your Instructor and Schedule</h6>
-          <h4>{{ schedule }}</h4>
-        </div>
-      </div>
 
-      <div class="input_group">
-        <div class="input_block">
-          <input
-            type="text"
-            id="message"
-            name="message"
-            class="input_rule"
-            placeholder="Write Your Message"
-            style="color: #000000; border: 1px solid #8c8c8c"
-          />
-        </div>
-      </div>
-      <input
-        id="w_message"
-        name="w_message"
-        type="submit"
-        value="Take Action"
-        onclick="return user_info({{ user.id }})"
-        class="btn btn-primary"
-        style="
-          background-color: #038c5c;
-          margin-top: 15px;
-          align-self: center;
-          margin-left: 200px;
-        "
-      />
-
-      <div class="input_group">
-        <div class="input_block"></div>
-      </div>
-    </form>
+  <div class="row">
+    <div class="col-6 col-md-4 square_size_top"></div>
+    <div class="col-6 col-md-4 square_size_top"></div>
+    <div class="col-6 col-md-4 square_size_top"></div>
+    <div class="col-6 col-md-4 square_size_top"></div>
   </div>
-</div>
-<div class="row">
-  <div class="col-6 col-md-4"></div>
-  <div class="col-6 col-md-4"></div>
-  <div class="col-6 col-md-4"></div>
+
+  <hr />
+  <footer>
+    <div class="row">
+      <div class="col-md-6">
+        <p>Copyright © 2020 BrainSkills</p>
+      </div>
+      <div class="col-md-6 text-md-right">
+        <a
+          href="https://www.facebook.com/BrainSkills-English-courses-102009591566955"
+          class="text-dark"
+          >Instagram</a
+        >
+        <span class="text-muted mx-2">|</span>
+        <a
+          href="https://www.facebook.com/BrainSkills-English-courses-102009591566955"
+          class="text-dark"
+          >Facebook</a
+        >
+        <span class="text-muted mx-2">|</span>
+        <a href="#" class="text-dark">Terms of Use</a>
+        <span class="text-muted mx-2">|</span>
+        <a href="#" class="text-dark">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
 </div>
 {% endblock %} {% block script %}
 <script
