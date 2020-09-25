@@ -39,6 +39,14 @@ img.bodyImg {
   text-align: center;
 }
 
+#logo_1_1 {
+  height: 23vh;
+  width: 15vw;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+}
+
 #back_img {
   height: 100vh;
   width: 100vw;
@@ -445,6 +453,10 @@ img.bodyImg {
   .to_lef {
     display: flex;
     align-items: flex-end;
+  }
+
+  img.BodyImg {
+    max-width: 100%;
   }
 }
 
