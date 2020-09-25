@@ -1,45 +1,129 @@
-{% extends "brainSkills/layout.html" %}
-{% load static %}
+{% extends "brainSkills/layout.html" %} {% load static %} {% block body %}
+<div class="row">
+  <div class="col-6 col-md-4 square_size_mid"></div>
+  <div class="col-6 col-md-4 square_size_mid"></div>
+</div>
 
-{% block body %}
-<div class="row">
-  <div class="col-6 col-md-4 square_size_mid"></div>
-  <div class="col-6 col-md-4 square_size_mid" style="background-color: #fff"></div>
-  <div class="col-6 col-md-4 square_size_mid"></div>
-</div>
-<div class="row">
-  <div class="col-6 col-md-4 square_size_up">
-    <div style="align-self: center">
-      <h4 class="titleAbout_page" style="color: #grey; align-self: center">New York</h4><br><h2 style="color: #black">+1 ( 917 ) 387 5824</h2>
+<div class="container" style="background-color: #fff">
+  <div class="jumbotron" style="background-color: #fff">
+    <div class="row">
+      <div class="col-6 col-md-4 square_size_mid"></div>
+      <div class="col-md-6 col-lg-4 col-xl-3 square_size_mid">
+        <div class="col-6 col-md-4 square_size_mid"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div
+        class="col-md-6 col-lg-4 col-xl-3"
+        style="background-color: transparent"
+      >
+        <h2></h2>
+        <p></p>
+      </div>
+      <div class="col-md-6 col-lg-4 col-xl-3">
+        <div
+          class="col-md-6 col-lg-4 col-xl-3 square_size"
+          style="background-color: #fff"
+        >
+          <img
+            src="{% static 'brainSkills/logo_1.png' %}"
+            class="img_service"
+          />
+        </div>
+      </div>
+
+      <div class="col-md-6 square_size" style="background-color: #fff">
+        <div class="container align-self-center" id="dec_center">
+          <div id="text_wrapper_top">
+            <h1 class="titleAbout_page"></h1>
+            <br />
+            <div class="container">
+              <div class="textAbout_page_la">
+                <h2
+                  class="titleAbout_page"
+                  style="color: #grey; align-self: center"
+                >
+                  brainSkills7@gmail.com
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div
+        class="col-md-6 col-lg-4 col-xl-3"
+        style="background-color: transparent"
+      >
+        <h2></h2>
+        <p></p>
+      </div>
+
+      <div
+        class="col-md-6 col-lg-4 col-xl-3 square_size"
+        style="background-color: #fff"
+      >
+        <div class="container align-self-center" id="dec_center">
+          <div id="text_wrapper_top">
+            <h4 class="titleAbout_page">Quito</h4>
+            <hr id="separate_line_s" />
+            <div class="container">
+              <div class="textAbout_page_la">
+                <h4>+593 999 250 040</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="col-md-6 col-lg-4 col-xl-3 square_size"
+        style="background-color: #fff"
+      >
+        <div class="container align-self-center" id="dec_center">
+          <div id="text_wrapper_top">
+            <h4 class="titleAbout_page">NY</h4>
+            <hr id="separate_line_s" />
+            <div class="container">
+              <div class="textAbout_page_la">
+                <h4>+1 ( 917 ) 387 5824</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="col-6 col-md-4 square_size_up" style="background-color: #fff">
-    <img src="{% static 'brainSkills/logo_1.png' %}" id="logo_1">
-  </div>
-  <div class="col-6 col-md-4 square_size_up">
-    <div style="align-self: center">
-      <h4 class="titleAbout_page" style="color: #grey; align-self: center">Quito</h4><br><h2 style="color: #black">+593 999 250 040</h2>
+
+  <hr />
+  <footer>
+    <div class="row">
+      <div class="col-md-6">
+        <p>Copyright © 2020 BrainSkills</p>
+      </div>
+      <div class="col-md-6 text-md-right">
+        <a
+          href="https://www.facebook.com/BrainSkills-English-courses-102009591566955"
+          class="text-dark"
+          >Instagram</a
+        >
+        <span class="text-muted mx-2">|</span>
+        <a
+          href="https://www.facebook.com/BrainSkills-English-courses-102009591566955"
+          class="text-dark"
+          >Facebook</a
+        >
+        <span class="text-muted mx-2">|</span>
+        <a href="#" class="text-dark">Terms of Use</a>
+        <span class="text-muted mx-2">|</span>
+        <a href="#" class="text-dark">Privacy Policy</a>
+      </div>
     </div>
-  </div>
+  </footer>
 </div>
-<div class="row">
-  <div class="col-6 col-md-4 square_size">
-    <a class="nav-link" href="https://www.facebook.com/BrainSkills-English-courses-102009591566955">
-      <img src="{% static 'brainSkills/fb.png' %}" class="logo_c">
-    </a>
-  </div>
-  <div class="col-6 col-md-4 square_size" style="background-color: #fff">
-    <div style="align-self: center">
-      <h2 class="titleAbout_page" style="color: #grey; align-self: center">brainSkills7@gmail.com</h2>
-    </div>
-  </div>
-  <div class="col-6 col-md-4 square_size">
-    <a class="nav-link" href="https://www.instagram.com/brain_skills/">
-      <img src="{% static 'brainSkills/ig.png' %}" class="logo_c">
-    </a>
-  </div>
-</div>
-{% endblock %}
-{% block script %}
+{% endblock %} {% block script %}
 <script src="{% static 'brainSkills/main.js' %}"></script>
 {% endblock %}
