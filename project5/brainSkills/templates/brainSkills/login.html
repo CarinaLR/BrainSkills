@@ -1,82 +1,146 @@
 {% extends "brainSkills/layout.html" %} {% load static %} {% block body %}
+
+<div class="row">
+  <div class="col-6 col-md-4"></div>
+  <div class="col-6 col-md-4"></div>
+  <div class="col-6 col-md-4"></div>
+</div>
+
 <div class="row">
   <div class="col-6 col-md-4" style="background-color: #ededed"></div>
   <div class="col-12 col-sm-6 col-md-8" style="background-color: #ededed"></div>
   <div class="col-6 col-md-4" style="background-color: #ededed"></div>
 </div>
+
 <div class="row">
-  <div class="col-6 square_size" style="background-color: #ffff">
-    <div
-      class="container align-self-center"
-      id="dec_center"
-      style="background-color: #ededed"
-    >
-      <div id="text_wrapper_top">
-        <h1 class="titleAbout_page">Welcome back!</h1>
-        <hr id="separate_line_s" />
-        <div class="textAbout_page_la">
-          Please do not hesitate to contact us if you would like to receive more
-          information. We are here for you!
+  <div class="col-6 col-md-4"></div>
+  <div class="col-6 col-md-4"></div>
+  <div class="col-6 col-md-4"></div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6 col-md-4 square_size_top"></div>
+    <div class="col-6 col-md-4 square_size_top"></div>
+    <div class="col-6 col-md-4 square_size_top"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 square_size" style="background-color: #fff">
+      <div
+        class="container align-self-center"
+        id="dec_center"
+        style="background-color: #ededed"
+      >
+        <div id="text_wrapper_top">
+          <h1 class="titleAbout_page">Welcome Back!</h1>
+          <div class="input_group">
+            <div class="input_block"></div>
+          </div>
+          <hr id="separate_line_s" />
+          <div class="textAbout_page_la">
+            Please do not hesitate to contact us if you would like to receive
+            more information. We are here for you!
+          </div>
         </div>
+
+        {% if message %}
+        <div>{{ message }}</div>
+        {% endif %}
       </div>
-      {% if message %}
-      <div>{{ message }}</div>
-      {% endif %}
+    </div>
+
+    <div
+      class="col-md-6 col-lg-4 col-xl-3 square_size"
+      style="background-color: transparent"
+    >
+      <h2></h2>
+    </div>
+
+    <div
+      class="col-md-6 col-lg-4 col-xl-3 square_size"
+      style="background-color: #fff"
+    >
+      <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <div class="input_group">
+          <div class="input_block">
+            <input
+              type="text"
+              name="full_name"
+              class="input_rule"
+              placeholder="Your Full Name"
+              style="color: #000000; border: 1px solid #8c8c8c"
+            />
+          </div>
+        </div>
+
+        <div class="input_group">
+          <div class="input_block">
+            <input
+              type="email"
+              name="email"
+              class="input_rule"
+              placeholder="Your Email"
+              style="color: #000000; border: 1px solid #8c8c8c"
+            />
+          </div>
+        </div>
+
+        <div class="input_group">
+          <div class="input_block">
+            <input
+              type="password"
+              name="password"
+              class="input_rule"
+              placeholder="Password"
+              style="color: #000000; border: 1px solid #8c8c8c"
+            />
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-primary"
+          style="background-color: #038c5c; margin-top: 15px"
+        >
+          Login
+        </button>
+      </form>
     </div>
   </div>
-  <div class="col-6 square_size" style="background-color: #ffff">
-    <form action="{% url 'login' %}" method="post">
-      {% csrf_token %}
-      <div class="input_group">
-        <div class="input_block">
-          <input
-            type="text"
-            name="full_name"
-            class="input_rule"
-            placeholder="Your Full Name"
-            style="color: #000000; border: 1px solid #8c8c8c"
-          />
-        </div>
-      </div>
 
-      <div class="input_group">
-        <div class="input_block">
-          <input
-            type="email"
-            name="email"
-            class="input_rule"
-            placeholder="Your Email"
-            style="color: #000000; border: 1px solid #8c8c8c"
-          />
-        </div>
-      </div>
-
-      <div class="input_group">
-        <div class="input_block">
-          <input
-            type="password"
-            name="password"
-            class="input_rule"
-            placeholder="Password"
-            style="color: #000000; border: 1px solid #8c8c8c"
-          />
-        </div>
-      </div>
-
-      <button
-        type="submit"
-        class="btn btn-primary"
-        style="background-color: #038c5c; margin-top: 15px"
-      >
-        Login
-      </button>
-    </form>
+  <div class="row">
+    <div class="col-6 col-md-4 square_size_top"></div>
+    <div class="col-6 col-md-4 square_size_top"></div>
+    <div class="col-6 col-md-4 square_size_top"></div>
+    <div class="col-6 col-md-4 square_size_top"></div>
   </div>
-</div>
-<div class="row">
-  <div class="col-6 col-md-4"></div>
-  <div class="col-6 col-md-4"></div>
-  <div class="col-6 col-md-4"></div>
+
+  <hr />
+  <footer>
+    <div class="row">
+      <div class="col-md-6">
+        <p>Copyright © 2020 BrainSkills</p>
+      </div>
+      <div class="col-md-6 text-md-right">
+        <a
+          href="https://www.facebook.com/BrainSkills-English-courses-102009591566955"
+          class="text-dark"
+          >Instagram</a
+        >
+        <span class="text-muted mx-2">|</span>
+        <a
+          href="https://www.facebook.com/BrainSkills-English-courses-102009591566955"
+          class="text-dark"
+          >Facebook</a
+        >
+        <span class="text-muted mx-2">|</span>
+        <a href="#" class="text-dark">Terms of Use</a>
+        <span class="text-muted mx-2">|</span>
+        <a href="#" class="text-dark">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
 </div>
 {% endblock %} {% block script %}
 <script src="{% static 'brainSkills/main.js' %}"></script>
