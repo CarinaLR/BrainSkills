@@ -22,11 +22,16 @@ h3 {
   margin: 0.5em 0;
 }
 
+img.bodyImg {
+  max-width: 100%;
+}
+
 /* id */
 
 #logo_1 {
   height: 23vh;
   width: 15vw;
+  max-width: 100%;
   padding: 15px;
   display: flex;
   align-items: center;
