@@ -1,75 +1,146 @@
 {% extends "brainSkills/layout.html" %} {% load static %} {% block body %}
+
 <div class="row">
-  <div class="col-6 col-md-4" style="background-color: #ededed"></div>
-  <div class="col-12 col-sm-6 col-md-8" style="background-color: #ededed"></div>
-  <div class="col-6 col-md-4" style="background-color: #ededed"></div>
+  <div class="col-6 col-md-4"></div>
+  <div class="col-6 col-md-4"></div>
+  <div class="col-6 col-md-4"></div>
 </div>
+
 <div class="row">
-  <div class="col-6 square_size" style="background-color: #ffff">
-    <div
-      class="container align-self-center"
-      id="dec_center"
-      style="background-color: #ededed"
-    >
-      <div id="text_wrapper_top">
-        {% if user.is_authenticated %}
-        <h1 class="titleAbout_page">Hello {{ user.username }}!</h1>
-        {% endif %}
-        <hr id="separate_line_s" />
-        <div class="textAbout_page_la">
-          Please do not hesitate to contact us if you would like to receive more
-          information. We are here for you!
+  <div class="col-6 col-md-4"></div>
+  <div class="col-6 col-md-4"></div>
+  <div class="col-6 col-md-4"></div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6 col-md-4 square_size_top"></div>
+    <div class="col-6 col-md-4 square_size_top"></div>
+    <div class="col-6 col-md-4 square_size_top"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 square_size" style="background-color: #fff">
+      <div
+        class="container align-self-center"
+        id="dec_center"
+        style="background-color: #ededed"
+      >
+        <div id="text_wrapper_top">
+          <h1 class="titleAbout_page">Welcome to BrainSkills!</h1>
+
+          <div class="input_group">
+            <div class="input_block">
+              <h2>brainskills7@gmail.com</h2>
+            </div>
+          </div>
+
+          <hr id="separate_line_s" />
+          <div class="textAbout_page_la">
+            Please do not hesitate to contact us if you would like to receive
+            more information. We are here for you!
+          </div>
         </div>
       </div>
-      {% if message %}
-      <div>{{ message }}</div>
-      {% endif %}
+    </div>
+
+    <div class="col-md-6 square_size" style="background-color: #fff">
+      <div
+        class="container align-self-center"
+        id="dec_center"
+        style="background-color: #fff"
+      >
+        <div id="text_wrapper_top">
+          <br />
+          <div class="input_group">
+            <div class="input_block">
+              <h2>Select below the type of account you want to create</h2>
+            </div>
+          </div>
+
+          <hr id="separate_line_s" />
+          <br />
+          <br />
+          <div class="textAbout_page_la"></div>
+
+          <div>
+            <form>
+              {% csrf_token %}
+              <div class="input_group">
+                <div class="input_block">
+                  <a
+                    href="{% url 'student_login' %}"
+                    name="student"
+                    class="choices btn-lg"
+                    role="button"
+                    id="student"
+                  >
+                    * Student
+                  </a>
+                  <a
+                    href="{% url 'teacher_login' %}"
+                    name="teacher"
+                    class="choices btn-lg"
+                    role="button"
+                    id="teacher"
+                  >
+                    * Teacher
+                  </a>
+                  <a
+                    href="{% url 'register' %}"
+                    name="guest"
+                    class="choices btn-lg"
+                    role="button"
+                    id="guest"
+                  >
+                    * Guest
+                  </a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="col-6 square_size" style="background-color: #ffff">
-    <form>
-      {% csrf_token %}
-      <div class="input_group">
-        <div class="input_block">
-          <p class="lead">
-            Select below the type of account you want to create
-          </p>
-          <a
-            href="{% url 'student_login' %}"
-            name="student"
-            class="choices btn-lg"
-            role="button"
-            id="student"
-          >
-            * Student
-          </a>
-          <a
-            href="{% url 'teacher_login' %}"
-            name="teacher"
-            class="choices btn-lg"
-            role="button"
-            id="teacher"
-          >
-            * Teacher
-          </a>
-          <a
-            href="{% url 'register' %}"
-            name="guest"
-            class="choices btn-lg"
-            role="button"
-            id="guest"
-          >
-            * Guest
-          </a>
-        </div>
-      </div>
-    </form>
+
+  <div class="row">
+    <div class="col-6 col-md-4 square_size_top"></div>
+    <div class="col-6 col-md-4 square_size_top"></div>
+    <div class="col-6 col-md-4 square_size_top"></div>
   </div>
-</div>
-<div class="row">
-  <div class="col-6 col-md-4"></div>
-  <div class="col-6 col-md-4"></div>
-  <div class="col-6 col-md-4"></div>
+
+  <div class="row">
+    <div class="col-6 col-md-4 square_size_top"></div>
+    <div class="col-6 col-md-4 square_size_top"></div>
+    <div class="col-6 col-md-4 square_size_top"></div>
+    <div class="col-6 col-md-4 square_size_top"></div>
+  </div>
+
+  <hr />
+  <footer>
+    <div class="row">
+      <div class="col-md-6">
+        <p>Copyright © 2020 BrainSkills</p>
+      </div>
+      <div class="col-md-6 text-md-right">
+        <a
+          href="https://www.facebook.com/BrainSkills-English-courses-102009591566955"
+          class="text-dark"
+          >Instagram</a
+        >
+        <span class="text-muted mx-2">|</span>
+        <a
+          href="https://www.facebook.com/BrainSkills-English-courses-102009591566955"
+          class="text-dark"
+          >Facebook</a
+        >
+        <span class="text-muted mx-2">|</span>
+        <a href="#" class="text-dark">Terms of Use</a>
+        <span class="text-muted mx-2">|</span>
+        <a href="#" class="text-dark">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
 </div>
 {% endblock %} {% block script %}
 <script src="{% static 'brainSkills/main.js' %}"></script>
