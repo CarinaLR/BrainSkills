@@ -1,11 +1,11 @@
 {% extends "brainSkills/layout.html" %} {% load static %} {% block body %}
 <div class="row">
-  <div class="col-6 col-md-4" style="background-color: #ededed"></div>
-  <div class="col-12 col-sm-6 col-md-8" style="background-color: #ededed"></div>
-  <div class="col-6 col-md-4" style="background-color: #ededed"></div>
+  <div class="col-6 col-md-4" style="background-color: #fff"></div>
+  <div class="col-12 col-sm-6 col-md-8" style="background-color: #ffff"></div>
+  <div class="col-6 col-md-4" style="background-color: #fff"></div>
 </div>
 <div class="row">
-  <div class="col-6 square_size" style="background-color: #ffff">
+  <div class="col-md-6   square_size" style="background-color: #ffff">
     <form method="post">
       {% csrf_token %}
       <div
@@ -101,7 +101,7 @@
       </form>
     </div>
   </div>
-  <div class="col-6 square_size" style="background-color: #ffff">
+  <div class="col-md-6 square_size" style="background-color: #ffff">
     <form>
       <div class="input_group">
         <div class="input_block">
@@ -138,7 +138,7 @@
 </div>
 <div class="row">
   <div class="col-6 square_size" style="background-color: #ffff">
-  <div class="col-6 square_size" style="background-color: #ffff">
+  <div class="col-md-6 square_size" style="background-color: #ffff">
   <div class="input_group">
         <div class="input_block">
           <h4>Student's contact</h4>
@@ -162,6 +162,8 @@
       </div>
   </div>
 </div>
+
+
 {% endblock %} {% block script %}
 <script src="{% static 'brainSkills/main.js' %}"></script>
 {% endblock %}
