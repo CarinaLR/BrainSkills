@@ -1,0 +1,204 @@
+{% extends "brainSkills/layout.html" %} {% load static %} {% block body %}
+<div class="row">
+  <div class="col-6 col-md-4" style="background-color: #ededed"></div>
+  <div class="col-12 col-sm-6 col-md-8" style="background-color: #ededed"></div>
+  <div class="col-6 col-md-4" style="background-color: #ededed"></div>
+</div>
+<div class="row">
+  <div class="col-6 square_size" style="background-color: #ffff">
+    <div
+      class="container align-self-center"
+      id="dec_center"
+      style="background-color: #ededed"
+    >
+      <div id="text_wrapper_top">
+        {% if user.is_authenticated %}
+        <h1 class="titleAbout_page">Hello {{ user.username }}!</h1>
+        {% else %}
+        <h1 clas="titleAbout_page">Fill out the following form</h1>
+        {% endif %}
+        <hr id="separate_line_s" />
+        <div class="textAbout_page_la">
+          Please do not hesitate to contact us if you would like to receive more
+          information. We are here for you!
+        </div>
+
+        <div class="ui container-fluid" id="logo">
+          <img src="{% static 'brainSkills/logo_1.png' %}" id="logo_1" />
+        </div>
+      </div>
+      {% if message %}
+      <div>{{ message }}</div>
+      {% endif %}
+    </div>
+  </div>
+  <div class="col-6 square_size" style="background-color: #ffff">
+    <form method="post">
+      {% csrf_token %}
+      <div class="input_group">
+        <div class="input_block">
+          <h1>You will be register as student</h1>
+        </div>
+      </div>
+      <div class="input_group">
+        <div class="input_block">
+          <input
+            type="text"
+            name="full_name"
+            class="input_rule"
+            id="exampleInputFullName"
+            aria-describedby="emailHelp"
+            placeholder="Your Full Name"
+            style="color: #000000; border: 1px solid #8c8c8c"
+          />
+        </div>
+      </div>
+
+      <div class="input_group">
+        <div class="input_block">
+          <input
+            type="email"
+            name="email"
+            class="input_rule"
+            placeholder="Your Email"
+            style="color: #000000; border: 1px solid #8c8c8c"
+          />
+        </div>
+      </div>
+
+      <div class="input_group">
+        <div class="input_block">
+          <input
+            type="password"
+            name="password"
+            class="input_rule"
+            placeholder="Password"
+            style="color: #000000; border: 1px solid #8c8c8c"
+          />
+        </div>
+      </div>
+
+      <div class="input_group">
+        <div class="input_block">
+          <input
+            type="password"
+            name="con_pass"
+            class="input_rule"
+            placeholder="Confirm Password"
+            style="color: #000000; border: 1px solid #8c8c8c"
+          />
+        </div>
+      </div>
+
+      <div class="input_group">
+        <div class="input_block">
+          <h4>Service</h4>
+        </div>
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="services">Options</label>
+        </div>
+        <select name="services" class="custom-select" id="services">
+          <option selected>Choose...</option>
+          <option value="1">One on One - online</option>
+          <option value="2">Group 2 up to 6 - online</option>
+          <option value="3">In Person</option>
+        </select>
+      </div>
+
+      <div class="input_group">
+        <div class="input_block">
+          <h4>Level</h4>
+        </div>
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="levels">Options</label>
+        </div>
+        <select name="levels" class="custom-select" id="levels">
+          <option selected>Choose...</option>
+          <option value="1">Beginner</option>
+          <option value="2">Intermediate</option>
+          <option value="3">Advance</option>
+        </select>
+      </div>
+
+      <div class="input_group">
+        <div class="input_block">
+          <h4>Schedule</h4>
+        </div>
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <label class="input-group-text" for="schedules">Options</label>
+        </div>
+        <select name="schedules" class="custom-select" id="schedules">
+          <option selected>Choose...</option>
+          <option value="1">Monday - Wednesday - Friday (09:00 - 09:45)</option>
+          <option value="2">Tuesday - Thursday (09:00 - 09:45)</option>
+          <option value="3">
+            Tuesday - Wednesday - Thursday (09:00 - 09:45)
+          </option>
+          <option value="4">Monday - Wednesday - Friday (10:00 - 10:45)</option>
+          <option value="5">Tuesday - Thursday (10:00 - 10:45)</option>
+          <option value="6">
+            Tuesday - Wednesday - Thursday (10:00 - 10:45)
+          </option>
+          <option value="7">Monday - Wednesday - Friday (11:00 - 11:45)</option>
+          <option value="8">Tuesday - Thursday (11:00 - 11:45)</option>
+          <option value="9">
+            Tuesday - Wednesday - Thursday (11:00 - 11:45)
+          </option>
+          <option value="10">
+            Monday - Wednesday - Friday (14:00 - 14:45)
+          </option>
+          <option value="11">Tuesday - Thursday (14:00 - 14:45)</option>
+          <option value="12">
+            Tuesday - Wednesday - Thursday (14:00 - 14:45)
+          </option>
+          <option value="13">
+            Monday - Wednesday - Friday (15:00 - 15:45)
+          </option>
+          <option value="14">Tuesday - Thursday (15:00 - 15:45)</option>
+          <option value="15">
+            Tuesday - Wednesday - Thursday (15:00 - 15:45)
+          </option>
+          <option value="16">
+            Monday - Wednesday - Friday (16:00 - 16:45)
+          </option>
+          <option value="17">Tuesday - Thursday (16:00 - 16:45)</option>
+          <option value="18">
+            Tuesday - Wednesday - Thursday (16:00 - 16:45)
+          </option>
+          <option value="19">
+            Monday - Wednesday - Friday (17:00 - 17:45)
+          </option>
+          <option value="20">Tuesday - Thursday (17:00 - 17:45)</option>
+          <option value="21">
+            Tuesday - Wednesday - Thursday (17:00 - 17:45)
+          </option>
+        </select>
+      </div>
+
+      <button
+        type="submit"
+        class="btn btn-primary"
+        style="background-color: #038c5c; margin-top: 15px"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6 col-md-4"></div>
+  <div class="col-6 col-md-4"></div>
+  <div class="col-6 col-md-4"></div>
+</div>
+{% endblock %} {% block script %}
+<script src="{% static 'brainSkills/main.js' %}"></script>
+{% endblock %}
