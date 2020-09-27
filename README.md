@@ -38,7 +38,7 @@ Built with `Python`/`Django`/`JavaScript`/ `Bootstrap4`/ `JQuery`.
 
 ## Home page for all users
 
-![](/project5/brainSkills/static/brainSkills/readme/home_brainskills.png)
+![](/project5/brainSkills/static/brainSkills/readme/home_brainSkills.png)
 
 ## Home page for a registered user
 
@@ -50,7 +50,7 @@ Built with `Python`/`Django`/`JavaScript`/ `Bootstrap4`/ `JQuery`.
 
 ## User will be prompted to choose an account
 
-![](/project5/brainSkills/static/brainSkills/readme/user_status_brainSkills.png)
+![](/project5/brainSkills/static/brainSkills/readme/user_status_brainskills.png)
 
 ## Student profile - shows the user information if the user is a student. Allows students to send messages to teachers.
 
