@@ -34,7 +34,7 @@ Built with `Python`/`Django`/`JavaScript`/ `Bootstrap4`/ `JQuery`.
 
 ## DB SCHEMA
 
-![](/static/brainSkills/readme/db_schema_brainskills.png)
+![](/project5/brainSkills/static/brainSkills/readme/db_schema_brainskills)
 
 ## Home page for all users
 
