@@ -34,30 +34,30 @@ Built with `Python`/`Django`/`JavaScript`/ `Bootstrap4`/ `JQuery`.
 
 ## DB SCHEMA
 
-![](/project5/brainSkills/static/brainSkills/readme/db_schema_brainskills)
+![](/project5/brainSkills/static/brainSkills/readme/db_schema_brainskills.png)
 
 ## Home page for all users
 
-![](/static/brainSkills/readme/home_brainskills.png)
+![](/project5/brainSkills/static/brainSkills/readme/home_brainskills.png)
 
 ## Home page for a registered user
 
-![](/static/brainSkills/readme/home3_nrainskills.png)
+![](/project5/brainSkills/static/brainSkills/readme/home3_nrainskills.png)
 
 ## Mobile responsive design with toggle navbar and scrolling down the page, using the bootstrap grid system.
 
-![](/static/brainSkills/readme/mobile_responsive.png)
+![](/project5/brainSkills/static/brainSkills/readme/mobile_responsive.png)
 
 ## User will be prompted to choose an account
 
-![](/static/brainSkills/readme/user_status_brainSkills.png)
+![](/project5/brainSkills/static/brainSkills/readme/user_status_brainSkills.png)
 
 ## Student profile - shows the user information if the user is a student. Allows students to send messages to teachers.
 
-![](/static/brainSkills/readme/student_profile.png)
+![](/project5/brainSkills/static/brainSkills/readme/student_profile.png)
 
 ## Teacher profile - shows the messages from students to handle, student's contact, and let the teacher choose for a time schedule.
 
-![](/static/brainSkills/readme/teacher_profile1.png)
+![](/project5/brainSkills/static/brainSkills/readme/teacher_profile1.png)
 
-![](/static/brainSkills/readme/teacher_profile2.png)
+![](/project5/brainSkills/static/brainSkills/readme/teacher_profile2.png)
