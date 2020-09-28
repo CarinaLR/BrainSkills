@@ -6,7 +6,7 @@ The aim of BrainSkills is to help the student to get confident speaking in Engli
 
 At BrainSkills website, the user can choose between a guest, student, or teacher account. Base on the user selection, the user will be able to create a profile with different characteristics. If is `student` the user will have to choose a service, level of English, and time schedule for his class. Also will be able to send a message to the teacher or administration with inquiries. If is `teacher` the user will be able to select a time schedule and also will have access to the messages that the students could have sent, as well as the student contact information.
 
-This project is base on users' role and data models manipulation. Having one site with different status for the users makes the application powerful and effective.
+This project is base on users' role and data models manipulation. Having one site with different statuses for the users makes the application powerful and effective.
 
 Web Programming with Python and JavaScript.
 
