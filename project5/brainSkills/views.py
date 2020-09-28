@@ -107,8 +107,6 @@ def logout_out(request):
     logout(request)
     return HttpResponseRedirect(reverse("index"))
 
-# Block to render greet
-
 
 def profile(request, name):
     username = request.user
@@ -299,7 +297,7 @@ def student_login(request):
         # Convert string from input into integer to pass as id filed for level
         level = request.POST["levels"]
         level_id = int(level)
-        # Convert string from input into integer to pass as id filed for level
+        # Convert string from input into integer to pass as id filed for schedule
         schedule = request.POST["schedules"]
         schedule_id = int(schedule)
 
