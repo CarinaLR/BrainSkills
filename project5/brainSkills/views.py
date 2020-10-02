@@ -9,7 +9,8 @@ from django.shortcuts import HttpResponse, HttpResponseRedirect, render, redirec
 from django.urls import reverse
 from dotenv import load_dotenv
 from django.views.decorators.csrf import csrf_exempt
-from django.core.mail import EmailMessage
+from django.core.mail import EmailMessage, send_mail, EmailMultiAlternatives
+from django.template.loader import render_to_string, get_template
 
 from .models import User, Service, Level, Student, Teacher, Message, Course, Assign, Schedule
 
@@ -327,10 +328,18 @@ def student_login(request):
                 "message": "Password must match."
             })
 
-        # Send welcome email
-        msg = EmailMessage('Welcome to BrainSkills', 'We hope you are enjoying the classes. Thank you for choosing us.', to=[
-                           'brainSkills7@gmail.com'])
-        msg.send()
+        # # Send welcome email
+        # msg = EmailMessage('Welcome to BrainSkills', 'We hope you are enjoying the classes. Thank you for choosing us.', to=[
+        #                    'brainSkills7@gmail.com'])
+        # msg.send()
+        # print("Email sent successfully")
+
+        # Send html content in email message
+        html_message = render_to_string('brainSkills/email_msg.html')
+        subject = 'Welcome to BrainSkills'
+
+        send_mail(subject, message=html_message,
+                  from_email='brainSkills7@gmail.com', recipient_list=['brainSkills7@gmail.com'], fail_silently=False)
         print("Email sent successfully")
 
         # Create User update is_student to True
@@ -399,3 +408,8 @@ def teacher_login(request):
         return HttpResponseRedirect(reverse("login"))
     else:
         return render(request, "brainSkills/teacher_login.html")
+
+
+# Block to send html email to user
+def email_msg(request):
+    return render(request, "brainSkills/email_msg.html")

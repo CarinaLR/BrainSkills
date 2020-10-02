@@ -16,4 +16,5 @@ urlpatterns = [
     path("user_info/<int:user_id>", views.user_info, name="user_info"),
     path("<str:name>", views.profile, name="profile"),
     path("status/<str:status>", views.status, name="status"),
+    path("email_msg", views.email_msg, name="email_msg"),
 ]
