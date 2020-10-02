@@ -63,6 +63,12 @@ def register(request):
                 "message": "Password must match."
             })
 
+        # Send welcome email
+        msg = EmailMessage('Welcome to BrainSkills', 'Thank you for choosing us.', to=[
+                           'brainSkills7@gmail.com'])
+        msg.send()
+        print("Email sent successfully")
+
         # Create User
         try:
             user = User.objects.create_user(username, email, password)
@@ -321,6 +327,12 @@ def student_login(request):
                 "message": "Password must match."
             })
 
+        # Send welcome email
+        msg = EmailMessage('Welcome to BrainSkills', 'We hope you are enjoying the classes. Thank you for choosing us.', to=[
+                           'brainSkills7@gmail.com'])
+        msg.send()
+        print("Email sent successfully")
+
         # Create User update is_student to True
         try:
             user = User.objects.create_user(username, email, password)
@@ -363,6 +375,12 @@ def teacher_login(request):
             return render(request, "brainSkills/register.html", {
                 "message": "Password must match."
             })
+
+        # Send welcome email
+        msg = EmailMessage('Welcome to BrainSkills', 'We are glad to have you as part of our team. Thank you for choosing us.', to=[
+                           'brainSkills7@gmail.com'])
+        msg.send()
+        print("Email sent successfully")
 
         # Create User update is_teacher to True
         try:
