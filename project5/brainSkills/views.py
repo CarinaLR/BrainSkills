@@ -9,6 +9,7 @@ from django.shortcuts import HttpResponse, HttpResponseRedirect, render, redirec
 from django.urls import reverse
 from dotenv import load_dotenv
 from django.views.decorators.csrf import csrf_exempt
+from django.core.mail import EmailMessage
 
 from .models import User, Service, Level, Student, Teacher, Message, Course, Assign, Schedule
 
