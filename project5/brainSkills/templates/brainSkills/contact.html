@@ -9,7 +9,11 @@
     <div class="row">
       <div class="col-6 col-md-4 square_size_mid"></div>
       <div class="col-md-6 col-lg-4 col-xl-3 square_size_mid">
-        <div class="col-6 col-md-4 square_size_mid"></div>
+        <div class="col-6 col-md-4 square_size_mid">
+          <h2 class="titleAbout_page" style="color: #grey; align-self: center">
+            brainSkills7@gmail.com
+          </h2>
+        </div>
       </div>
     </div>
 
@@ -34,22 +38,55 @@
       </div>
 
       <div class="col-md-6 square_size" style="background-color: #fff">
-        <div class="container align-self-center" id="dec_center">
-          <div id="text_wrapper_top">
-            <h1 class="titleAbout_page"></h1>
-            <br />
-            <div class="container">
-              <div class="textAbout_page_la">
-                <h2
-                  class="titleAbout_page"
-                  style="color: #grey; align-self: center"
-                >
-                  brainSkills7@gmail.com
-                </h2>
-              </div>
+        <form method="post">
+          {% csrf_token %}
+          <div class="input_group">
+            <div class="input_block">
+              <p>
+                Please make sure to include your name and phone number in your
+                message in order for us to contact you.
+              </p>
+              <input
+                type="text"
+                id="e_address"
+                name="e_address"
+                class="input_rule align-self-center"
+                placeholder="From: Your Email Address"
+                style="color: #000000; border: 1px solid #8c8c8c"
+              />
             </div>
           </div>
-        </div>
+
+          <div class="input_group">
+            <div class="input_block">
+              <input
+                type="text"
+                id="message"
+                name="message"
+                class="input_rule align-self-center"
+                placeholder="Write Your Message"
+                style="color: #000000; border: 1px solid #8c8c8c"
+              />
+            </div>
+          </div>
+          <input
+            id="w_message"
+            name="w_message"
+            type="submit"
+            value="Contact Me"
+            class="btn btn-primary"
+            style="
+              background-color: #038c5c;
+              margin-top: 15px;
+              align-self: center;
+              margin-left: 200px;
+            "
+          />
+
+          <div class="input_group">
+            <div class="input_block"></div>
+          </div>
+        </form>
       </div>
     </div>
 
