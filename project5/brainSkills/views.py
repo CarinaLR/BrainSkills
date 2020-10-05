@@ -64,10 +64,18 @@ def register(request):
                 "message": "Password must match."
             })
 
-        # Send welcome email
-        msg = EmailMessage('Welcome to BrainSkills', 'Thank you for choosing us.', to=[
-                           'brainSkills7@gmail.com'])
-        msg.send()
+        # # Send welcome email
+        # msg = EmailMessage('Welcome to BrainSkills', 'Thank you for choosing us.', to=[
+        #                    'brainSkills7@gmail.com'])
+        # msg.send()
+        # print("Email sent successfully")
+        # Send html content in email message
+        html_message = render_to_string('brainSkills/email_msg.html')
+        subject = 'Welcome to BrainSkills'
+        message = 'Thank you for choosing us.'
+
+        send_mail(subject, message=message,
+                  from_email='brainSkills7@gmail.com', recipient_list=['brainSkills7@gmail.com'], html_message=html_message, fail_silently=False)
         print("Email sent successfully")
 
         # Create User
@@ -386,10 +394,18 @@ def teacher_login(request):
                 "message": "Password must match."
             })
 
-        # Send welcome email
-        msg = EmailMessage('Welcome to BrainSkills', 'We are glad to have you as part of our team. Thank you for choosing us.', to=[
-                           'brainSkills7@gmail.com'])
-        msg.send()
+        # # Send welcome email
+        # msg = EmailMessage('Welcome to BrainSkills', 'We are glad to have you as part of our team. Thank you for choosing us.', to=[
+        #                    'brainSkills7@gmail.com'])
+        # msg.send()
+        # print("Email sent successfully")
+        # Send html content in email message
+        html_message = render_to_string('brainSkills/email_msg.html')
+        subject = 'Welcome to BrainSkills'
+        message = 'Thank you for choosing us.'
+
+        send_mail(subject, message=message,
+                  from_email='brainSkills7@gmail.com', recipient_list=['brainSkills7@gmail.com'], html_message=html_message, fail_silently=False)
         print("Email sent successfully")
 
         # Create User update is_teacher to True
