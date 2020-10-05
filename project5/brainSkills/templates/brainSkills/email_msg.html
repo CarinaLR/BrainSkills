@@ -50,10 +50,13 @@
           class="col-md-6 col-lg-4 col-xl-3 square_size"
           style="background-color: #fff"
         >
+          {% comment %}
           <img
-            src="{% static 'brainSkills/logo_1.png' %}"
+            src="{{ request.get_host() }}{% static 'brainSkills/logo_1.png' %}"
+            alt=" Image "
             class="img_service"
           />
+          {% endcomment %}
         </div>
 
         <div
@@ -113,9 +116,10 @@
             <p>Copyright © 2020 BrainSkills</p>
           </div>
           <div class="col-md-6 text-md-right">
-            <h4>Quito: (593) 999.250.040</h4>
-            <span class="text-muted mx-2">|</span>
-            <h4>NY: (917) 387.5824</h4>
+            <h4>
+              Quito: (593) 999.250.040
+              <span class="text-muted mx-2">|</span> NY: (917) 387.5824
+            </h4>
           </div>
         </div>
       </footer>
