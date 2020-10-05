@@ -42,6 +42,22 @@ def services(request):
 
 
 def contact(request):
+    if request.method == "POST":
+        # Get user input
+        user_email = request.POST["e_address"]
+        user_message = request.POST["message"]
+
+        # Send html content in email message
+        subject = 'User inquire'
+        email = user_email
+        message = user_message
+        print("User email ", email)
+        print("User message ", message)
+
+        send_mail(subject, message=message,
+                  from_email=email, recipient_list=['brainSkills7@gmail.com'], fail_silently=False)
+        print("Email sent successfully")
+
     return render(request, "brainSkills/contact.html")
 
 # block to render register page
