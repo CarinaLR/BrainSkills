@@ -42,10 +42,6 @@
             more information. We are here for you!
           </div>
         </div>
-
-        {% if message %}
-        <div>{{ message }}</div>
-        {% endif %}
       </div>
     </div>
 
@@ -64,6 +60,9 @@
         {% csrf_token %}
         <div class="input_group">
           <div class="input_block">
+            {% if message %}
+            <h4><strong>{{ message }}</strong></h4>
+            {% endif %}
             <input
               type="text"
               name="full_name"

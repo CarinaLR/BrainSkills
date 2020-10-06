@@ -80,11 +80,6 @@ def register(request):
                 "message": "Password must match."
             })
 
-        # # Send welcome email
-        # msg = EmailMessage('Welcome to BrainSkills', 'Thank you for choosing us.', to=[
-        #                    'brainSkills7@gmail.com'])
-        # msg.send()
-        # print("Email sent successfully")
         # Send html content in email message
         html_message = render_to_string('brainSkills/email_msg.html')
         subject = 'Welcome to BrainSkills'
@@ -126,7 +121,7 @@ def login_in(request):
 
         else:
             return render(request, "brainSkills/login.html", {
-                "message": "Invalid Full Name, Email or Password."
+                "message": "Uups! Invalid Full Name, Email or Password. Please try again."
             })
     else:
         return render(request, "brainSkills/login.html")
