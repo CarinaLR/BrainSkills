@@ -50,7 +50,7 @@ def contact(request):
         # Send html content in email message
         subject = 'User inquire'
         email = user_email
-        message = user_message
+        message = f"From: {user_email}, Message: {user_message}"
         print("User email ", email)
         print("User message ", message)
 
