@@ -9,7 +9,7 @@ function user_info(user_id) {
   userId = user_id;
   console.log("reach message - user_id", userId);
   // Get request by id.
-  fetch(`user_info/${userId}`)
+  fetch(`profile/user_info/${userId}`)
     .then((response) => response.json())
     .then((response) => writeMessage(response));
   //Prevent reloading the page
@@ -69,7 +69,7 @@ function writeMessage(response) {
 
   //POST request to create message.
   fetch(
-    `user_info/${userID}`,
+    `profile/user_info/${userID}`,
     {
       method: "POST",
       headers: { "X-CSRFToken": getCookie("csrftoken") },

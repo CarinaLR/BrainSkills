@@ -140,6 +140,7 @@ def logout_out(request):
     return HttpResponseRedirect(reverse("index"))
 
 
+@login_required
 def profile(request, name):
     username = request.user
 
