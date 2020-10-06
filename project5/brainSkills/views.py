@@ -344,7 +344,7 @@ def student_login(request):
         confirmation = request.POST["con_pass"]
         if password != confirmation:
             return render(request, "brainSkills/register.html", {
-                "message": "Password must match."
+                "message": "Please try again. Password must match."
             })
 
         # # Send welcome email

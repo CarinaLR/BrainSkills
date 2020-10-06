@@ -23,9 +23,6 @@
           achieve. We would love to know you and help you to reach your goals.
         </div>
       </div>
-      {% if message %}
-        <div>{{ message }}</div>
-      {% endif %}
     </div>
   </div>
   <div class="col-6 col-md-4" style="background-color: #ededed"></div>
@@ -44,7 +41,9 @@
 
     <div class="row">
       <div class="col-md-6 col-lg-4 col-xl-3" style="background-color: transparent">
-        <h2></h2>
+        {% if message %}
+          <h4><strong>{{ message }}</strong></h4>
+        {% endif %}
         <p>
         </p>
       </div>
