@@ -77,7 +77,7 @@ def register(request):
         confirmation = request.POST["con_pass"]
         if password != confirmation:
             return render(request, "brainSkills/register.html", {
-                "message": "Password must match."
+                "message": "Please try again. Password must match."
             })
 
         # Send html content in email message
@@ -347,12 +347,6 @@ def student_login(request):
                 "message": "Please try again. Password must match."
             })
 
-        # # Send welcome email
-        # msg = EmailMessage('Welcome to BrainSkills', 'We hope you are enjoying the classes. Thank you for choosing us.', to=[
-        #                    'brainSkills7@gmail.com'])
-        # msg.send()
-        # print("Email sent successfully")
-
         # Send html content in email message
         html_message = render_to_string('brainSkills/email_msg.html')
         subject = 'Welcome to BrainSkills'
@@ -402,14 +396,9 @@ def teacher_login(request):
         confirmation = request.POST["con_pass"]
         if password != confirmation:
             return render(request, "brainSkills/register.html", {
-                "message": "Password must match."
+                "message": "Please try again. Password must match."
             })
 
-        # # Send welcome email
-        # msg = EmailMessage('Welcome to BrainSkills', 'We are glad to have you as part of our team. Thank you for choosing us.', to=[
-        #                    'brainSkills7@gmail.com'])
-        # msg.send()
-        # print("Email sent successfully")
         # Send html content in email message
         html_message = render_to_string('brainSkills/email_msg.html')
         subject = 'Welcome to BrainSkills'
