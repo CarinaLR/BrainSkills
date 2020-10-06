@@ -32,15 +32,15 @@ Built with `Python`/`Django`/`JavaScript`/ `Bootstrap4`/ `JQuery`.
 - `python manage.py migrate`
 - `python manage.py runserver`
 
-## DB SCHEMA
+## DB SCHEMA.
 
 ![](/project5/brainSkills/static/brainSkills/readme/db_schema_brainskills.png)
 
-## Home page for all users
+## Home page for all users.
 
 ![](/project5/brainSkills/static/brainSkills/readme/home_brainSkills.png)
 
-## Home page for a registered user
+## Home page for a registered user.
 
 ![](/project5/brainSkills/static/brainSkills/readme/home3_nrainskills.png)
 
@@ -48,9 +48,13 @@ Built with `Python`/`Django`/`JavaScript`/ `Bootstrap4`/ `JQuery`.
 
 ![](/project5/brainSkills/static/brainSkills/readme/mobile_responsive.png)
 
-## User will be prompted to choose an account
+## User will be prompted to choose an account.
 
 ![](/project5/brainSkills/static/brainSkills/readme/user_status_brainskills.png)
+
+## User will receive a welcome email upon registration.
+
+![](/project5/brainSkills/static/brainSkills/readme/welcome_email.png)
 
 ## Student profile - shows the user information if the user is a student. Allows students to send messages to teachers.
 
@@ -60,4 +64,10 @@ Built with `Python`/`Django`/`JavaScript`/ `Bootstrap4`/ `JQuery`.
 
 ![](/project5/brainSkills/static/brainSkills/readme/teacher_profile1.png)
 
-![](/project5/brainSkills/static/brainSkills/readme/teacher_profile2.png)
+## Any user will be able to send a message to company email.
+
+![](/project5/brainSkills/static/brainSkills/readme/any_user_msg.png)
+
+## Company will receive an email with the Subject: "user inquiries" to contact the user.
+
+![](/project5/brainSkills/static/brainSkills/readme/user_inquire.png)

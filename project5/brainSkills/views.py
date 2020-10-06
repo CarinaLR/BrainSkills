@@ -48,7 +48,7 @@ def contact(request):
         user_message = request.POST["message"]
 
         # Send html content in email message
-        subject = 'User inquire'
+        subject = 'User inquiries'
         email = user_email
         message = f"From: {user_email}, Message: {user_message}"
         print("User email ", email)
