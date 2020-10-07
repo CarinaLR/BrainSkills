@@ -9,7 +9,7 @@ function user_info(user_id) {
   userId = user_id;
   console.log("reach message - user_id", userId);
   // Get request by id.
-  fetch(`profile/user_info/${userId}`)
+  fetch(`user_info/${userId}`)
     .then((response) => response.json())
     .then((response) => writeMessage(response));
   //Prevent reloading the page
@@ -67,9 +67,12 @@ function writeMessage(response) {
   let new_owner = response.username;
   console.log(`owner: ${new_owner} message: ${new_message}`);
 
+  //Callback to activate alert.
+  messageSent();
+
   //POST request to create message.
   fetch(
-    `profile/user_info/${userID}`,
+    `user_info/${userID}`,
     {
       method: "POST",
       headers: { "X-CSRFToken": getCookie("csrftoken") },
@@ -81,7 +84,10 @@ function writeMessage(response) {
     .then((result) => {
       console.log("result ->", result);
     });
-
   //Prevent reloading the page
   return false;
+}
+
+function messageSent() {
+  alert("Message sent successfully. Thank you!");
 }
