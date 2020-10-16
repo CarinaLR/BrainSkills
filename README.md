@@ -38,36 +38,36 @@ Built with `Python`/`Django`/`JavaScript`/ `Bootstrap4`/ `JQuery`.
 
 ## Home page for all users.
 
-![](/project5/brainSkills/static/brainSkills/readme/home_brainSkills.png)
+![](/brainSkills/static/brainSkills/readme/home_brainSkills.png)
 
 ## Home page for a registered user.
 
-![](/project5/brainSkills/static/brainSkills/readme/home3_nrainskills.png)
+![](/brainSkills/static/brainSkills/readme/home3_nrainskills.png)
 
 ## Mobile responsive design with toggle navbar and scrolling down the page, using the bootstrap grid system.
 
-![](/project5/brainSkills/static/brainSkills/readme/mobile_responsive.png)
+![](/brainSkills/static/brainSkills/readme/mobile_responsive.png)
 
 ## User will be prompted to choose an account.
 
-![](/project5/brainSkills/static/brainSkills/readme/user_status_brainskills.png)
+![](/brainSkills/static/brainSkills/readme/user_status_brainskills.png)
 
 ## User will receive a welcome email upon registration.
 
-![](/project5/brainSkills/static/brainSkills/readme/welcome_email.png)
+![](/brainSkills/static/brainSkills/readme/welcome_email.png)
 
 ## Student profile - shows the user information if the user is a student. Allows students to send messages to teachers.
 
-![](/project5/brainSkills/static/brainSkills/readme/student_profile.png)
+![](/brainSkills/static/brainSkills/readme/student_profile.png)
 
 ## Teacher profile - shows the messages from students to handle, student's contact, and let the teacher choose for a time schedule.
 
-![](/project5/brainSkills/static/brainSkills/readme/teacher_profile1.png)
+![](/brainSkills/static/brainSkills/readme/teacher_profile1.png)
 
 ## Any user will be able to send a message to company email.
 
-![](/project5/brainSkills/static/brainSkills/readme/any_user_msg.png)
+![](/brainSkills/static/brainSkills/readme/any_user_msg.png)
 
 ## Company will receive an email with the Subject: "user inquiries" to contact the user.
 
-![](/project5/brainSkills/static/brainSkills/readme/user_inquire.png)
+![](/brainSkills/static/brainSkills/readme/user_inquire.png)
