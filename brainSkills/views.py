@@ -81,13 +81,13 @@ def register(request):
             })
 
         # Send html content in email message
-        html_message = render_to_string('brainSkills/email_msg.html')
-        subject = 'Welcome to BrainSkills'
-        message = 'Thank you for choosing us.'
+        # html_message = render_to_string('brainSkills/email_msg.html')
+        # subject = 'Welcome to BrainSkills'
+        # message = 'Thank you for choosing us.'
 
-        send_mail(subject, message=message,
-                  from_email='brainSkills7@gmail.com', recipient_list=['brainSkills7@gmail.com'], html_message=html_message, fail_silently=False)
-        print("Email sent successfully")
+        # send_mail(subject, message=message,
+        #           from_email='brainSkills7@gmail.com', recipient_list=['brainSkills7@gmail.com'], html_message=html_message, fail_silently=False)
+        # print("Email sent successfully")
 
         # Create User
         try:
@@ -349,13 +349,13 @@ def student_login(request):
             })
 
         # Send html content in email message
-        html_message = render_to_string('brainSkills/email_msg.html')
-        subject = 'Welcome to BrainSkills'
-        message = 'Thank you for choosing us.'
+        # html_message = render_to_string('brainSkills/email_msg.html')
+        # subject = 'Welcome to BrainSkills'
+        # message = 'Thank you for choosing us.'
 
-        send_mail(subject, message=message,
-                  from_email='brainSkills7@gmail.com', recipient_list=['brainSkills7@gmail.com'], html_message=html_message, fail_silently=False)
-        print("Email sent successfully")
+        # send_mail(subject, message=message,
+        #           from_email='brainSkills7@gmail.com', recipient_list=['brainSkills7@gmail.com'], html_message=html_message, fail_silently=False)
+        # print("Email sent successfully")
 
         # Create User update is_student to True
         try:
