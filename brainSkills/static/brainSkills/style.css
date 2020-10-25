@@ -27,7 +27,17 @@ img.bodyImg {
   height: auto;
 }
 
+img {
+  max-width: 100%;
+}
+
 /* id */
+
+#move {
+  align-items: center;
+  position: relative;
+  float: left;
+}
 
 #logo_1 {
   height: 23vh;
