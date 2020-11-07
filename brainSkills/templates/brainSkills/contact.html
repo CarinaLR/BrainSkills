@@ -1,105 +1,98 @@
 {% extends "brainSkills/layout.html" %} {% load static %} {% block body %}
-<div class="row">
-  <div class="col-6 col-md-4 square_size_mid"></div>
-  <div class="col-6 col-md-4 square_size_mid"></div>
-</div>
 
 <div class="container" style="background-color: #fff">
   <div class="jumbotron" style="background-color: #fff">
-    <div class="row">
-      <div class="col-6 col-md-4 square_size_mid"></div>
-      <div class="col-md-6 col-lg-4 col-xl-3 square_size_mid">
-        <div class="col-6 col-md-4 square_size_mid">
-          <h2 class="titleAbout_page" style="color: #grey; align-self: center">
-            brainSkills7@gmail.com
-          </h2>
+    <section class="container container-fluid">
+      <div class="row">
+        <div class="col-6 col-md-4 square_size_mid"></div>
+        <div class="col-md-6 col-lg-4 col-xl-3 square_size_mid">
+          <div class="col-6 col-md-4 square_size_mid">
+            <h2 class="titleAbout_page" style="color: #grey; align-self: center">
+              brainSkills7@gmail.com
+            </h2>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="row">
-      <div
-        class="col-md-6 col-lg-4 col-xl-3"
-        style="background-color: transparent"
-      >
-        <h2></h2>
-        <p></p>
-      </div>
-      <div class="col-md-6 col-lg-4 col-xl-3">
+      <div class="row">
         <div
-          class="col-md-6 col-lg-4 col-xl-3 square_size"
-          style="background-color: #fff"
+          class="col-md-6 col-lg-4 col-xl-3"
+          style="background-color: transparent"
         >
-          <img
-            src="{% static 'brainSkills/logo_1.png' %}"
-            class="img_service"
-          />
+          <h2></h2>
+          <p></p>
+        </div>
+        <div class="col-md-6 col-lg-4 col-xl-3">
+          <div
+            class="col-md-6 col-lg-4 col-xl-3 square_size"
+            style="background-color: #fff"
+          >
+            <img
+              src="{% static 'brainSkills/logo_1.png' %}"
+              class="img_service"
+            />
+          </div>
+        </div>
+
+        <div class="col-md-6 square_size" style="background-color: #fff">
+          <form method="post">
+            {% csrf_token %}
+            <div class="input_group">
+              <div class="input_block">
+                <h4><strong>Would you like to get in touch with us?</strong></h4>
+                <p>
+                  Please make sure to include your
+                  <strong>name, phone number </strong>and
+                  <strong>email address</strong> in your message in order for us
+                  to contact you.
+                </p>
+                <input
+                  type="text"
+                  id="e_address"
+                  name="e_address"
+                  class="input_rule align-self-center"
+                  placeholder="From: Your Email Address"
+                  style="color: #000000; border: 1px solid #8c8c8c"
+                />
+              </div>
+            </div>
+
+            <div class="input_group">
+              <div class="input_block">
+                <input
+                  type="text"
+                  id="message"
+                  name="message"
+                  class="input_rule align-self-center"
+                  placeholder="Write Your Message"
+                  style="color: #000000; border: 1px solid #8c8c8c"
+                />
+              </div>
+            </div>
+            <input
+              id="contact_me"
+              name="contact_me"
+              type="submit"
+              value="Contact Us"
+              class="btn btn-primary"
+              style="
+                background-color: #038c5c;
+                margin-top: 15px;
+                align-self: center;
+                margin-left: 200px;
+              "
+            />
+
+            <div class="input_group">
+              <div class="input_block"></div>
+            </div>
+          </form>
         </div>
       </div>
-
-      <div class="col-md-6 square_size" style="background-color: #fff">
-        <form method="post">
-          {% csrf_token %}
-          <div class="input_group">
-            <div class="input_block">
-              <h4><strong>Would you like to get in touch with us?</strong></h4>
-              <p>
-                Please make sure to include your
-                <strong>name, phone number </strong>and
-                <strong>email address</strong> in your message in order for us
-                to contact you.
-              </p>
-              <input
-                type="text"
-                id="e_address"
-                name="e_address"
-                class="input_rule align-self-center"
-                placeholder="From: Your Email Address"
-                style="color: #000000; border: 1px solid #8c8c8c"
-              />
-            </div>
-          </div>
-
-          <div class="input_group">
-            <div class="input_block">
-              <input
-                type="text"
-                id="message"
-                name="message"
-                class="input_rule align-self-center"
-                placeholder="Write Your Message"
-                style="color: #000000; border: 1px solid #8c8c8c"
-              />
-            </div>
-          </div>
-          <input
-            id="contact_me"
-            name="contact_me"
-            type="submit"
-            value="Contact Us"
-            class="btn btn-primary"
-            style="
-              background-color: #038c5c;
-              margin-top: 15px;
-              align-self: center;
-              margin-left: 200px;
-            "
-          />
-
-          <div class="input_group">
-            <div class="input_block"></div>
-          </div>
-        </form>
-      </div>
-    </div>
+    </section>
 
     <div class="row">
-      <div
-        class="col-md-6 col-lg-4 col-xl-3"
-        style="background-color: transparent"
-      >
-        <h2></h2>
-        <p></p>
+
       </div>
 
       <div
