@@ -1,11 +1,13 @@
 {% extends "brainSkills/layout.html" %} {% load static %} {% block body %}
 
 <div class="container">
+  {% comment %}
   <div class="row">
     <div class="col-6 col-md-4 square_size_top"></div>
     <div class="col-6 col-md-4 square_size_top"></div>
     <div class="col-6 col-md-4 square_size_top"></div>
   </div>
+  {% endcomment %}
   <div class="row">
     <div class="col-md-6 square_size" style="background-color: #fff">
       <div
@@ -30,14 +32,12 @@
       </div>
     </div>
 
-    {% comment %}
     <div
       class="col-md-6 col-lg-4 col-xl-3 square_size"
       style="background-color: transparent"
     >
       <h2></h2>
     </div>
-    {% endcomment %}
 
     <div
       class="col-md-6 col-lg-4 col-xl-3 square_size"
