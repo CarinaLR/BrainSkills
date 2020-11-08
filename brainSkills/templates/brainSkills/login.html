@@ -1,12 +1,6 @@
 {% extends "brainSkills/layout.html" %} {% load static %} {% block body %}
 
 <div class="row">
-  <div class="col-6 col-md-4"></div>
-  <div class="col-6 col-md-4"></div>
-  <div class="col-6 col-md-4"></div>
-</div>
-
-<div class="row">
   <div class="col-6 col-md-4" style="background-color: #ededed"></div>
   <div class="col-12 col-sm-6 col-md-8" style="background-color: #ededed"></div>
   <div class="col-6 col-md-4" style="background-color: #ededed"></div>
@@ -19,11 +13,13 @@
 </div>
 
 <div class="container">
+  {% comment %}
   <div class="row">
     <div class="col-6 col-md-4 square_size_top"></div>
     <div class="col-6 col-md-4 square_size_top"></div>
     <div class="col-6 col-md-4 square_size_top"></div>
   </div>
+  {% endcomment %}
   <div class="row">
     <div class="col-md-6 square_size" style="background-color: #fff">
       <div
@@ -45,17 +41,11 @@
       </div>
     </div>
 
-    <div
-      class="col-md-6 col-lg-4 col-xl-3 square_size"
-      style="background-color: transparent"
-    >
+    <div class="col-md-6 square_size" style="background-color: transparent">
       <h2></h2>
     </div>
 
-    <div
-      class="col-md-6 col-lg-4 col-xl-3 square_size"
-      style="background-color: #fff"
-    >
+    <div class="col-md-6 square_size" style="background-color: #fff">
       <form action="{% url 'login' %}" method="post">
         {% csrf_token %}
         <div class="input_group">
