@@ -41,11 +41,17 @@
       </div>
     </div>
 
-    <div class="col-md-6 square_size" style="background-color: transparent">
+    <div
+      class="col-md-6 col-lg-4 col-xl-3 square_size"
+      style="background-color: transparent"
+    >
       <h2></h2>
     </div>
 
-    <div class="col-md-6 square_size" style="background-color: #fff">
+    <div
+      class="col-md-6 col-lg-4 col-xl-3 square_size"
+      style="background-color: #fff"
+    >
       <form action="{% url 'login' %}" method="post">
         {% csrf_token %}
         <div class="input_group">
